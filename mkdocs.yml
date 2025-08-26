@@ -2,7 +2,7 @@ site_name: Entrega exercicio I
 site_author: MARIA LUIZA
 site_url: https://MariaLuizazz.github.io/MACHINE-LEARNING-PESSOAL
 repo_url: https://github.com/MariaLuizazz/MACHINE-LEARNING-PESSOAL
-repo_name: github/MACHINE-LEARNING-PESSOAL
+repo_name: APRENDIZAGEM DE MÁQUINA PESSOAL
 theme:
   name: material
   palette:
