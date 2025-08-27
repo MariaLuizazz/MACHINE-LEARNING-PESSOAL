@@ -15,6 +15,10 @@ Na etapa de pré-processamento,
 --8<-- "./docs/EXERCICIOAD/Preprocessamento.py"
 ```
 # Divisão de Dados
+
+``` python exec="on" html="0"
+--8<-- "./docs/EXERCICIOAD/Divisaodedados.py"
+```
 # Treinamento do modelo
 # Avaliação do Modelo Final
 # Relatório Final
