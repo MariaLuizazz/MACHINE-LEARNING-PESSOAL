@@ -7,3 +7,16 @@ O principal desafio contra sua detecção é como classificar os tumores em mali
 ``` python exec="on" html="0"
 --8<-- "./docs/EXERCICIOAD/Exploracaodedados.py"
 ```
+# Pré-Processamento
+
+Na etapa de pré-processamento,
+
+``` python exec="on" html="0"
+--8<-- "./docs/EXERCICIOAD/Preprocessamento.py"
+```
+# Divisão de Dados
+# Treinamento do modelo
+# Avaliação do Modelo Final
+# Relatório Final
+
+
