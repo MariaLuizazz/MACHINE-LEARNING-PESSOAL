@@ -102,6 +102,9 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.blocks.caption
   - tables
+  - codehilite
+
+
       
 plugins:
   - glightbox
