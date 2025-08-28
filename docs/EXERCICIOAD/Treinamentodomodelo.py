@@ -40,4 +40,5 @@ classifier.fit(x_train, y_train)
 accuracy = classifier.score(x_test, y_test)
 print(f"Accuracy: {accuracy:.2f}")
 
+
 print(df.to_markdown(index=False))
