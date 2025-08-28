@@ -33,6 +33,13 @@ df['concave points_mean'].fillna(df['concave points_mean'].median(), inplace=Tru
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
 
-print(f"Treino: {X_train.shape[0]} amostrass")
-print(f"Teste: {X_test.shape[0]} amostras")
-print(df.to_markdown(index=False))
+tabela_divisao = [
+    ["Conjunto", "Amostras", "Features", "Proporção"],
+    ["Treino", X_train.shape[0], X_train.shape[1], "80%"],
+    ["Teste", X_test.shape[0], X_test.shape[1], "20%"],
+    ["Total", X.shape[0], X.shape[1], "100%"]
+]
+
+print("# Divisão de Dados")
+print("\n" + tabulate(tabela_divisao, headers="firstrow", tablefmt="pipe"))
+print("\n")
