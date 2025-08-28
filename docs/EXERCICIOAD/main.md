@@ -28,7 +28,9 @@ Colunas irrelevantes para o modelo foram retiradas por exemplo a coluna ['id'] ,
 
 # Divisão de Dados
 
-!!! example "Explicação da base escolhida e codigo de exploração"
+!!! example "Explicação da etapa de divisão de dados"
+
+Na etapa de divisão de dados do dataset, eles foram separados em uma proporção de 30% treino e 70% teste.
 
 === "Code"
 
@@ -36,14 +38,8 @@ Colunas irrelevantes para o modelo foram retiradas por exemplo a coluna ['id'] ,
     --8<-- "docs/EXERCICIOAD/Divisaodedados.py"
     ``` 
 
-=== "Resultado"
-
-    ```python exec="on" html="0"
-    --8<-- "docs/EXERCICIOAD/Divisaodedados.py"
-    ```
-
-
 # Treinamento do modelo
+
 
 === "Code"
 
