@@ -29,8 +29,10 @@ y = df['diagnosis']
 df['concavity_mean'].fillna(df['concavity_mean'].median(), inplace=True)
 df['concave points_mean'].fillna(df['concave points_mean'].median(), inplace=True)
 
-#divisão de treinamento e teste 70/20
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.8, random_state=34, stratify=y)
+print(df.to_markdown(index=False))
+
+#divisão de treinamento e teste 
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=42, stratify=y)
 
 # Criar e treinar o modelo de árvore de decisão
 classifier = tree.DecisionTreeClassifier(random_state=42)
@@ -53,7 +55,7 @@ buffer = StringIO()
 plt.savefig(buffer, format="svg")
 print(buffer.getvalue())
 
-print(df.to_markdown(index=False))
+
 
 
 
