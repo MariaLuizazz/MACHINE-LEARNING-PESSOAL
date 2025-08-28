@@ -52,8 +52,35 @@ Na etapa de pré-processamento,
     ```python
     --8<-- "docs/EXERCICIOAD/Treinamentodomodelo.py"
     ``` 
+=== "Resultado"
+
+    ```python exec="on" html="0"
+    --8<-- "docs/EXERCICIOAD/Treinamentodomodelo.py"
+    ```
 
 # Avaliação do Modelo Final
+
+!!! example "Breast Cancer Dataset"
+
+=== "decision tree"
+
+    ```python exec="1" html="true"
+    --8<-- "docs/EXERCICIOAD/Avaliacaodomodelo.py"
+    ```
+
+=== "dataset"
+
+    ```python exec="1"
+    --8<-- "docs/EXERCICIOAD/Avaliacaodomodelo.py"
+    ```
+
+=== "code"
+
+    ```python exec="0"
+    --8<-- "docs/EXERCICIOAD/Avaliacaodomodelo.py"
+    ```
+---
+
 # Relatório Final
 
 
