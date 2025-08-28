@@ -40,6 +40,13 @@ Na etapa de divisão de dados do dataset, eles foram separados em uma proporçã
 
 # Treinamento do modelo
 
+!!! example "Explicação da etapa I E II de treinamento"
+
+!!! example "ETAPA I:"
+Na etapa I o modelo foi testado e treinado usando uma proporção de 20% treino e 80% teste, com essas porcentagens o modelo apresentou 93% de acuracia.
+
+!!! example "ETAPA II:"
+ NA etapa II o modelo foi testado e treinado usando uma proporção de 30% treino e 70% teste, com essas porcentagens o modelo apresentou 90% de acuracia.
 
 === "Code"
 
@@ -53,7 +60,16 @@ Na etapa de divisão de dados do dataset, eles foram separados em uma proporçã
     ```
 
 # Avaliação do Modelo Final
-ggjgvg
+
+
+Após realizar o treinamento do modelo em diferentes divisões de treino e teste, foi feita a avaliação final utilizando o algoritmo de árvore de decisão.
+
+O objetivo dessa etapa foi verificar como o modelo se comporta diante dos dados de teste, analisando métricas de desempenho como acurácia e a complexidade da árvore.
+
+Durante a avaliação, percebi que a árvore gerada ficou relativamente pequena, o que pode indicar que o modelo está simplificando demais os padrões dos dados. Isso pode trazer um problema de underfitting (quando o modelo não aprende o suficiente).
+
+Ainda assim, os resultados mostraram uma acurácia razoável, o que significa que o modelo conseguiu classificar corretamente a maioria dos casos entre tumores benignos e malignos.
+
 
 !!! example "Breast Cancer Dataset"
 
@@ -63,11 +79,6 @@ ggjgvg
     --8<-- "docs/EXERCICIOAD/Avaliacaodomodelo.py"
     ```
 
-=== "dataset"
-
-    ```python exec="on" html="0"
-    --8<-- "docs/EXERCICIOAD/Avaliacaodomodelo.py"
-    ```
 
 === "code"
 
@@ -78,4 +89,26 @@ ggjgvg
 
 # Relatório Final
 
+!!! example "Resumo do Projeto"
 
+Este projeto teve como objetivo aplicar técnicas de Machine Learning para criar um modelo capaz de prever se um tumor de mama é benigno ou maligno, utilizando o dataset Breast Cancer Wisconsin (Diagnostic).
+
+As etapas seguidas foram:
+
+Exploração de dados - Pré-processamento - Divisão de dados – separação em treino e teste -
+Treinamento do modelo - Avaliação do modelo – análise do desempenho final com base na acurácia e na estrutura da árvore.
+
+
+!!! success "Resultados Obtidos"
+Acurácia variando entre 90% e 93%, dependendo da proporção de treino/teste utilizada.
+
+O modelo conseguiu generalizar relativamente bem, mas ainda apresenta limitações na complexidade da árvore.
+
+!!! tip "Conclusão"
+Mesmo com limitações, o projeto cumpriu seu objetivo: desenvolver um modelo de classificação supervisionada e aplicar todo o fluxo de pré-processamento, treino e avaliação, consolidando o  meu aprendizado sobre o processo de Machine Learning.
+
+=== "dataset"
+
+    ```python exec="on" html="0"
+    --8<-- "docs/EXERCICIOAD/Avaliacaodomodelo.py"
+    ```
