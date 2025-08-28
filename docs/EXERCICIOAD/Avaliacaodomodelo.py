@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from io import StringIO
 from sklearn import tree
-from io import BytesIO
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score
@@ -31,7 +30,7 @@ df['concavity_mean'].fillna(df['concavity_mean'].median(), inplace=True)
 df['concave points_mean'].fillna(df['concave points_mean'].median(), inplace=True)
 
 #divisão de treinamento e teste 80/20
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42, stratify=y)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=42, stratify=y)
 
 # Criar e treinar o modelo de árvore de decisão
 classifier = tree.DecisionTreeClassifier(random_state=42)
@@ -42,11 +41,15 @@ accuracy = classifier.score(x_test, y_test)
 print(f"Accuracy: {accuracy:.2f}")
 
 # Plotar árvore
-plt.figure(figsize=(12,8))
-tree.plot_tree(classifier, filled=True, feature_names=x.columns, class_names=['Maligno','Benigno'])
+plt.figure(figsize=(12,10))
+
+# Avaliar o modelo
+accuracy = classifier.score(x_test, y_test)
+print(f"Accuracy: {accuracy:.2f}")
+tree.plot_tree(classifier)
 
 # Para imprimir na página HTML
-buffer = BytesIO()
+buffer = StringIO()
 plt.savefig(buffer, format="svg")
 print(buffer.getvalue())
 
