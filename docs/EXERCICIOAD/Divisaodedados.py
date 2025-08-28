@@ -25,8 +25,8 @@ X = df.drop(columns=['diagnosis'])
 y = df['diagnosis']
 
 #imputação com mediana de valores ausentes nas features concavity_worts e concavity points_worst
-df['concavity_worts'].fillna(df['concavity_worst'].median(), inplace=True)
-df['concavity points_worts'].fillna(df['concavity points_worst'].median(), inplace=True)
+df['concavity_mean'].fillna(df['concavity_mean'].median(), inplace=True)
+df['concavity points_mean'].fillna(df['concavity points_mean'].median(), inplace=True)
 
 #divisão de treinamento e teste 80/20
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
