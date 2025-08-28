@@ -10,7 +10,7 @@ from tabulate import tabulate
 
 #carregamento da base
 df = pd.read_csv('https://raw.githubusercontent.com/MariaLuizazz/MACHINE-LEARNING-PESSOAL/refs/heads/main/dados/breast-cancer.csv')
-df = df.sample(n=50, random_state=42)  
+
 
 
 #pré processamento
