@@ -29,7 +29,6 @@ y = df['diagnosis']
 df['concavity_mean'].fillna(df['concavity_mean'].median(), inplace=True)
 df['concave points_mean'].fillna(df['concave points_mean'].median(), inplace=True)
 
-print(df.to_markdown(index=False))
 
 #divisão de treinamento e teste 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=42, stratify=y)
