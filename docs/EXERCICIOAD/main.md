@@ -8,7 +8,7 @@ O principal desafio contra sua detecção é como classificar os tumores em mali
 === "Resultado"
 
     ``` python exec="on" html="0"
-    --8<-- "./docs/EXERCICIOAD/Exploracaodedados.py"
+    --8<-- "docs/EXERCICIOAD/Exploracaodedados.py"
     ```
 === "Code"
 
@@ -23,7 +23,7 @@ Na etapa de pré-processamento,
 === "Resultado"
 
     ``` python exec="on" html="0"
-    --8<-- "./docs/EXERCICIOAD/Preprocessamento.py"
+    --8<-- "docs/EXERCICIOAD/Preprocessamento.py"
     ```
 === "Code"
 
