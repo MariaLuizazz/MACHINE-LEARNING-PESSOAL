@@ -36,9 +36,10 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_
 classifier = tree.DecisionTreeClassifier()
 classifier.fit(x_train, y_train)
 
-# Avaliar o modelo
-accuracy = classifier.score(x_test, y_test)
-print(f"Accuracy: {accuracy:.2f}")
-
 
 print(df.to_markdown(index=False))
+
+
+
+
+

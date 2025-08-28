@@ -46,6 +46,13 @@ Na etapa de pré-processamento,
 
 
 # Treinamento do modelo
+
+=== "Code"
+
+    ```python
+    --8<-- "docs/EXERCICIOAD/Treinamentodomodelo.py"
+    ``` 
+
 # Avaliação do Modelo Final
 # Relatório Final
 
