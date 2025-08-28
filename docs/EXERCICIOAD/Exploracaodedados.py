@@ -12,5 +12,4 @@ df = pd.read_csv('https://raw.githubusercontent.com/MariaLuizazz/MACHINE-LEARNIN
 
 
 
-
 print(df.to_markdown(index=False))

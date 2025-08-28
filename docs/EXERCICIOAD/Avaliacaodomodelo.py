@@ -37,14 +37,12 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_
 classifier = tree.DecisionTreeClassifier(random_state=42)
 classifier.fit(x_train, y_train)
 
-# Avaliaçaõ do modelo
-accuracy = classifier.score(x_test, y_test)
-print(f"Accuracy: {accuracy:.2f}")
+
 
 # Plotar árvore
 plt.figure(figsize=(12,10))
 
-# Avaliar o modelo
+# Avaliação o modelo, medindo a acuracia
 accuracy = classifier.score(x_test, y_test)
 print(f"Accuracy: {accuracy:.2f}")
 tree.plot_tree(classifier)
