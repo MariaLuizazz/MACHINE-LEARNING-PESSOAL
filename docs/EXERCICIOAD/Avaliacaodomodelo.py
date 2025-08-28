@@ -48,8 +48,8 @@ tree.plot_tree(classifier, filled=True, feature_names=x.columns, class_names=['M
 # Para imprimir na página HTML
 buffer = BytesIO()
 plt.savefig(buffer, format="svg")
-buffer.seek(0)
-print(buffer.getvalue().decode("utf-8"))
+print(buffer.getvalue())
+
 
 
 
