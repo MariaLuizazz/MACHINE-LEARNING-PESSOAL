@@ -18,7 +18,7 @@ O principal desafio contra sua detecção é como classificar os tumores em mali
 !!! example "Explicação dos processos realizados no pré-processamento"
 
 Na etapa de pré-processamento, os dados do dataset de cancer de mama passaram por um processo de limpeza de dados, tratamento de valores ausentes e label encoding.
-Colunas irrelevantes para o modelo foram retiradas por exemplo a coluna ['id'], foi realizada a imputação com mediana de valores ausentes nas features concavity_worts e concavity points_worst e conversão de caracteres para números com labelEncoder na variavel target diagnostico.
+Colunas irrelevantes para o modelo foram retiradas por exemplo a coluna ['id'] , foi realizada a imputação com mediana de valores ausentes nas features concavity_worts e concavity points_worst e conversão de caracteres para números com labelEncoder na variavel target diagnostico.
 
 === "Code"
 
