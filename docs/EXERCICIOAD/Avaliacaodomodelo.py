@@ -52,7 +52,7 @@ buffer = StringIO()
 plt.savefig(buffer, format="svg")
 print(buffer.getvalue())
 
-
+print(df.to_markdown(index=False))
 
 
 

@@ -69,7 +69,7 @@ ggjgvg
 
 === "dataset"
 
-    ```python exec="1"
+    ```python exec="on" html="0"
     --8<-- "docs/EXERCICIOAD/Avaliacaodomodelo.py"
     ```
 
