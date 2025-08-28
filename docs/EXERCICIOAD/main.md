@@ -25,6 +25,11 @@ Colunas irrelevantes para o modelo foram retiradas por exemplo a coluna ['id'] ,
     ```python
     --8<-- "docs/EXERCICIOAD/Preprocessamento.py"
     ``` 
+=== "Resultado"
+
+    ```python exec="on" html="0"
+    --8<-- "docs/EXERCICIOAD/Treinamentodomodelo.py"
+    ```
 
 # Divisão de Dados
 
@@ -40,7 +45,7 @@ Na etapa de divisão de dados do dataset, eles foram separados em uma proporçã
 
 # Treinamento do modelo
 
-!!! example "Explicação da etapa I E II de treinamento"
+
 
 !!! example "ETAPA I:"
 Na etapa I o modelo foi testado e treinado usando uma proporção de 20% treino e 80% teste, com essas porcentagens o modelo apresentou 93% de acuracia.
@@ -53,11 +58,7 @@ Na etapa I o modelo foi testado e treinado usando uma proporção de 20% treino 
     ```python
     --8<-- "docs/EXERCICIOAD/Treinamentodomodelo.py"
     ``` 
-=== "Resultado"
 
-    ```python exec="on" html="0"
-    --8<-- "docs/EXERCICIOAD/Treinamentodomodelo.py"
-    ```
 
 # Avaliação do Modelo Final
 
@@ -107,8 +108,5 @@ O modelo conseguiu generalizar relativamente bem, mas ainda apresenta limitaçõ
 !!! tip "Conclusão"
 Mesmo com limitações, o projeto cumpriu seu objetivo: desenvolver um modelo de classificação supervisionada e aplicar todo o fluxo de pré-processamento, treino e avaliação, consolidando o  meu aprendizado sobre o processo de Machine Learning.
 
-=== "dataset"
 
-    ```python exec="on" html="0"
-    --8<-- "docs/EXERCICIOAD/Avaliacaodomodelo.py"
-    ```
+
