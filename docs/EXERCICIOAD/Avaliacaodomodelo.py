@@ -37,8 +37,6 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_
 classifier = tree.DecisionTreeClassifier(random_state=42)
 classifier.fit(x_train, y_train)
 
-
-
 # Plotar árvore
 plt.figure(figsize=(12,10))
 
