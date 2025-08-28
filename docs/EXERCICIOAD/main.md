@@ -35,7 +35,7 @@ Colunas irrelevantes para o modelo foram retiradas por exemplo a coluna ['id'] ,
 
 !!! example "Explicação da etapa de divisão de dados"
 
-Na etapa de divisão de dados do dataset, eles foram separados em uma proporção de 30% treino e 70% teste.
+Na etapa de divisão de dados do dataset, eles foram separados em uma proporção de 30% teste e 70% treino.
 
 === "Code"
 
@@ -48,10 +48,10 @@ Na etapa de divisão de dados do dataset, eles foram separados em uma proporçã
 
 
 !!! example "ETAPA I:"
-Na etapa I o modelo foi testado e treinado usando uma proporção de 20% treino e 80% teste, com essas porcentagens o modelo apresentou 93% de acuracia.
+Na etapa I o modelo foi testado e treinado usando uma proporção de 20% teste 80% treino, com essas porcentagens o modelo apresentou 93% de acuracia.
 
 !!! example "ETAPA II:"
- NA etapa II o modelo foi testado e treinado usando uma proporção de 30% treino e 70% teste, com essas porcentagens o modelo apresentou 90% de acuracia.
+ NA etapa II o modelo foi testado e treinado usando uma proporção de 30% teste e 70% treino, com essas porcentagens o modelo apresentou 90% de acuracia.
 
 === "Code"
 
@@ -67,7 +67,7 @@ Após realizar o treinamento do modelo em diferentes divisões de treino e teste
 
 O objetivo dessa etapa foi verificar como o modelo se comporta diante dos dados de teste, analisando métricas de desempenho como acurácia e a complexidade da árvore.
 
-Durante a avaliação, percebi que a árvore gerada ficou relativamente pequena, o que pode indicar que o modelo está simplificando demais os padrões dos dados. Isso pode trazer um problema de underfitting (quando o modelo não aprende o suficiente).
+Durante a avaliação, percebi que a árvore gerada estava ficando relativamente pequena, o que podia  indicar que o modelo está simplificando demais os padrões dos dados, porém corrigindo a quantidade de dados que estavam sendo usados, a árvore pareceu mais coesa.
 
 Ainda assim, os resultados mostraram uma acurácia razoável, o que significa que o modelo conseguiu classificar corretamente a maioria dos casos entre tumores benignos e malignos.
 
