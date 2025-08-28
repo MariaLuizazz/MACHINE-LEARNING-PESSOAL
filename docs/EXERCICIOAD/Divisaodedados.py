@@ -32,5 +32,5 @@ df['concave points_mean'].fillna(df['concave points_mean'].median(), inplace=Tru
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
 
-print(f"Treino: {X_train.shape[0]} amostras")
+print(f"Treino: {X_train.shape[0]} amostrass")
 print(f"Teste: {X_test.shape[0]} amostras")
