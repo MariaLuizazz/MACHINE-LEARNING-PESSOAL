@@ -11,10 +11,7 @@ from tabulate import tabulate
 #carregamento da base
 df = pd.read_csv('https://raw.githubusercontent.com/MariaLuizazz/MACHINE-LEARNING-PESSOAL/refs/heads/main/dados/breast-cancer.csv')
 
-
-
 #pré processamento
-
 #remoção da coluna id pois é irrelevante para o modelo
 df = df.drop(columns=['id'])
 
@@ -36,7 +33,6 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_
 # Criar e treinar o modelo de árvore de decisão
 classifier = tree.DecisionTreeClassifier()
 classifier.fit(x_train, y_train)
-
 
 print(df.to_markdown(index=False))
 

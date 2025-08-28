@@ -31,7 +31,7 @@ df['concave points_mean'].fillna(df['concave points_mean'].median(), inplace=Tru
 
 
 #divisão de treinamento e teste 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42, stratify=y)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=42, stratify=y)
 
 # Criar e treinar o modelo de árvore de decisão
 classifier = tree.DecisionTreeClassifier(random_state=42)
