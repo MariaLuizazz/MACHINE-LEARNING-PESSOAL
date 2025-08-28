@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from io import StringIO
 from sklearn import tree
+from io import BytesIO
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score
@@ -10,7 +11,8 @@ from tabulate import tabulate
 
 #carregamento da base
 df = pd.read_csv('https://raw.githubusercontent.com/MariaLuizazz/MACHINE-LEARNING-PESSOAL/refs/heads/main/dados/breast-cancer.csv')
-df = df.sample(n=10, random_state=42)
+#definição do tamanho da amostra
+df = df.sample(n=50, random_state=42)  
 
 #pré processamento
 #remoção da coluna id pois é irrelevante para o modelo
@@ -32,18 +34,22 @@ df['concave points_mean'].fillna(df['concave points_mean'].median(), inplace=Tru
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42, stratify=y)
 
 # Criar e treinar o modelo de árvore de decisão
-classifier = tree.DecisionTreeClassifier()
+classifier = tree.DecisionTreeClassifier(random_state=42)
 classifier.fit(x_train, y_train)
 
 # Avaliaçaõ do modelo
 accuracy = classifier.score(x_test, y_test)
 print(f"Accuracy: {accuracy:.2f}")
-tree.plot_tree(classifier)
+
+# Plotar árvore
+plt.figure(figsize=(12,8))
+tree.plot_tree(classifier, filled=True, feature_names=x.columns, class_names=['Maligno','Benigno'])
 
 # Para imprimir na página HTML
-buffer = StringIO()
+buffer = BytesIO()
 plt.savefig(buffer, format="svg")
-print(buffer.getvalue())
+buffer.seek(0)
+print(buffer.getvalue().decode("utf-8"))
 
 
 
