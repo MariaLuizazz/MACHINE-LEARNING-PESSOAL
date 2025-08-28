@@ -34,3 +34,4 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 print(f"Treino: {X_train.shape[0]} amostrass")
 print(f"Teste: {X_test.shape[0]} amostras")
+print(df.to_markdown(index=False))
