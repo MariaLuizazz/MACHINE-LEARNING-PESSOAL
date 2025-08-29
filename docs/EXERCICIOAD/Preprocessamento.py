@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score
 
 #carregamento da base
 df = pd.read_csv('https://raw.githubusercontent.com/MariaLuizazz/MACHINE-LEARNING-PESSOAL/refs/heads/main/dados/breast-cancer.csv')
-print(df.sample(n=10, random_state=42).to_markdown(index=False))
+
 
 #pré processamento
 #remoção da coluna id pois é irrelevante para o modelo
