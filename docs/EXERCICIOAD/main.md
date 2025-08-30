@@ -61,7 +61,7 @@ Na etapa de divisão de dados do dataset, na primeira etapa de divisão eles for
 Na etapa I o modelo foi testado e treinado usando uma proporção de 20% teste 80% treino, com essas porcentagens o modelo obteve um resultado 93% de acuracia.
 
 !!! example "ETAPA II:"
- Na etapa II o modelo foi testado e treinado usando uma proporção de 30% teste e 70% treino, com essas porcentagens o modelo obteve um  resulyado de 90% de acuracia.
+ Na etapa II o modelo foi testado e treinado usando uma proporção de 30% teste e 70% treino, com essas porcentagens o modelo obteve um  resultado de 90% de acuracia.
 
 === "Code"
 
