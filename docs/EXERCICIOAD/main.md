@@ -6,6 +6,12 @@ O câncer de mama é o câncer mais comum entre as mulheres do mundo. É respons
 
 O principal desafio contra sua detecção é como classificar os tumores em malignos (cancerosos) ou benignos (não cancerosos), o intuito dessa entrega é criar um modelo que preveja a variavel target, classificada em tumores malignos ou benignos.
 
+!!! tip "Sobre o Dataset"
+
+Total de registros: 569 amostras
+Variável alvo: diagnosis
+Total de features (características): 30 variáveis numéricas relacionadas a tamanho, textura, forma e concavidade das células.
+
 
 === "Code"
 
