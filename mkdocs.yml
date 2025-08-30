@@ -9,7 +9,7 @@ theme:
     # primary: grey
     # Light mode
     - scheme: default
-      primary: grey
+      primary: blue
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode

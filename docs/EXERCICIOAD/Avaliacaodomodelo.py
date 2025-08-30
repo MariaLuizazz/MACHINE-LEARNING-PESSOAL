@@ -10,8 +10,6 @@ from tabulate import tabulate
 
 #carregamento da base
 df = pd.read_csv('https://raw.githubusercontent.com/MariaLuizazz/MACHINE-LEARNING-PESSOAL/refs/heads/main/dados/breast-cancer.csv')
-#definição do tamanho da amostra
-
 
 #pré processamento
 #remoção da coluna id pois é irrelevante para o modelo
