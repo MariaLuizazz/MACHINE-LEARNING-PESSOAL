@@ -10,7 +10,7 @@ from tabulate import tabulate
 
 #carregamento da base
 df = pd.read_csv('https://raw.githubusercontent.com/MariaLuizazz/MACHINE-LEARNING-PESSOAL/refs/heads/main/dados/breast-cancer.csv')
-print(df.sample(n=10, random_state=42).to_markdown(index=False))
+
 #pré processamento
 #remoção da coluna id pois é irrelevante para o modelo
 df = df.drop(columns=['id'])
@@ -34,6 +34,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_
 classifier = tree.DecisionTreeClassifier()
 classifier.fit(x_train, y_train)
 
+print(df.sample(n=10, random_state=42).to_markdown(index=False))
 print(df.to_markdown(index=False))
 
 
