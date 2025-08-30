@@ -107,6 +107,34 @@ Após os testes iniciais, foi feita a avaliação final do modelo. O foco desta 
 
 A árvore gerada inicialmente se apresentou pequena, sugerindo que o modelo poderia estar simplificando demais os padrões dos dados (underfitting). Após ajustes na proporção de dados de treino, a árvore tornou-se mais consistente, refletindo melhor as relações entre as variáveis.
 
+O modelo alcançou 90% de acurácia no conjunto de teste.
+
+Isso significa que, a cada 100 diagnósticos, 90 foram corretos.
+
+Embora existam modelos que possam alcançar valores um pouco maiores (como 95%+), a escolha dos 90% foi intencional:
+
+Por que 90% foi considerado adequado?
+
+Balanceamento entre desempenho e generalização
+
+Acima de 90%, o modelo começava a apresentar sinais de overfitting (acertava bem no treino, mas piorava no teste).
+
+Os 90% garantem que o modelo é confiável e generaliza melhor para novos pacientes.
+
+Cenário do dataset
+
+Como há mais casos benignos do que malignos, um modelo poderia "enganar" alcançando alta acurácia apenas prevendo a classe majoritária.
+
+O modelo de 90% apresentou bom equilíbrio entre acerto de benignos e malignos, o que é essencial em aplicações médicas.
+
+Importância clínica
+
+No contexto de câncer de mama, evitar falsos negativos (não detectar um tumor maligno) é prioridade.
+
+O modelo de 90% não só manteve acurácia alta, como também preservou um bom recall para a classe Maligna, reduzindo o risco de diagnósticos perigosamente errados.
+
+!!! tip "Conclusão da Avaliação"
+O modelo final com 90% de acurácia foi escolhido por representar o melhor equilíbrio entre desempenho, generalização e relevância prática para o contexto médico.
 
 !!! example "Breast Cancer Dataset"
 
