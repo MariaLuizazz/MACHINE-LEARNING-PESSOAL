@@ -17,7 +17,7 @@ O principal desafio contra sua detecção é como classificar os tumores em mali
     ```python exec="on" html="0"
     --8<-- "docs/EXERCICIOAD/Exploracaodedados.py"
     ```
-    
+
 # Pré-Processamento
 
 !!! example "Explicação dos processos realizados no pré-processamento"
@@ -40,7 +40,7 @@ Colunas irrelevantes para o modelo foram retiradas por exemplo a coluna ['id'] ,
 
 !!! example "Explicação da etapa de divisão de dados"
 
-Na etapa de divisão de dados do dataset, eles foram separados em uma proporção de 30% teste e 70% treino.
+Na etapa de divisão de dados do dataset, na primeira etapa de divisão eles foram separados em uma proporção de 20% teste e 80% treino e na segunda etapa uma proporção de 30 % teste e 80% treino.
 
 === "Code"
 
@@ -51,12 +51,11 @@ Na etapa de divisão de dados do dataset, eles foram separados em uma proporçã
 # Treinamento do modelo
 
 
-
 !!! example "ETAPA I:"
-Na etapa I o modelo foi testado e treinado usando uma proporção de 20% teste 80% treino, com essas porcentagens o modelo apresentou 93% de acuracia.
+Na etapa I o modelo foi testado e treinado usando uma proporção de 20% teste 80% treino, com essas porcentagens o modelo obteve um resultado 93% de acuracia.
 
 !!! example "ETAPA II:"
- NA etapa II o modelo foi testado e treinado usando uma proporção de 30% teste e 70% treino, com essas porcentagens o modelo apresentou 90% de acuracia.
+ Na etapa II o modelo foi testado e treinado usando uma proporção de 30% teste e 70% treino, com essas porcentagens o modelo obteve um  resulyado de 90% de acuracia.
 
 === "Code"
 
@@ -108,7 +107,6 @@ Treinamento do modelo - Avaliação do modelo – análise do desempenho final c
 !!! success "Resultados Obtidos"
 Acurácia variando entre 90% e 93%, dependendo da proporção de treino/teste utilizada.
 
-O modelo conseguiu generalizar relativamente bem, mas ainda apresenta limitações na complexidade da árvore.
 
 !!! tip "Conclusão"
 Mesmo com limitações, o projeto cumpriu seu objetivo: desenvolver um modelo de classificação supervisionada e aplicar todo o fluxo de pré-processamento, treino e avaliação, consolidando o  meu aprendizado sobre o processo de Machine Learning.
