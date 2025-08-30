@@ -35,7 +35,7 @@ classifier = tree.DecisionTreeClassifier()
 classifier.fit(x_train, y_train)
 
 print(df.sample(n=10, random_state=42).to_markdown(index=False))
-print(df.to_markdown(index=False))
+
 
 
 
