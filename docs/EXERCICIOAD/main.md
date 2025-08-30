@@ -1,16 +1,18 @@
-# Exploração de dados
+# Exploração de Dados
 
-!!! example "Explicação da base escolhida e codigo de exploração"
+!!! example "Descrição da base de dados e código de exploração"
 
-O câncer de mama é o câncer mais comum entre as mulheres do mundo. É responsável por 25% de todos os casos de câncer e afetou mais de 2,1 milhões de pessoas apenas em 2015. Começa quando as células da mama começam a crescer fora de controle. Essas células geralmente formam tumores que podem ser vistos via raios-X ou sentidos como nódulos na área da mama.
+O câncer de mama é o tipo de câncer mais comum entre mulheres em todo o mundo, responsável por aproximadamente 25% de todos os casos e afetando milhões de pessoas todos os anos. Ele se desenvolve quando células da mama começam a crescer de forma descontrolada, formando tumores que podem ser identificados por exames de imagem (raios-X) ou detectados como nódulos.
 
-O principal desafio contra sua detecção é como classificar os tumores em malignos (cancerosos) ou benignos (não cancerosos), o intuito dessa entrega é criar um modelo que preveja a variavel target, classificada em tumores malignos ou benignos.
+O principal desafio no diagnóstico é diferenciar corretamente os tumores malignos (cancerosos) dos benignos (não cancerosos). O objetivo deste projeto é desenvolver um modelo de classificação supervisionada capaz de prever, com base em atributos numéricos das células, se um tumor é maligno ou benigno.
 
 !!! tip "Sobre o Dataset"
 
 Total de registros: 569 amostras
-Variável alvo: diagnosis
-Total de features (características): 30 variáveis numéricas relacionadas a tamanho, textura, forma e concavidade das células.
+
+Variável alvo: diagnosis (M = maligno, B = benigno)
+
+Número de variáveis preditoras: 30 atributos numéricos relacionados ao tamanho, textura, formato e concavidade das células
 
 
 === "Code"
@@ -28,8 +30,13 @@ Total de features (características): 30 variáveis numéricas relacionadas a ta
 
 !!! example "Explicação dos processos realizados no pré-processamento"
 
-Na etapa de pré-processamento, os dados do dataset de cancer de mama passaram por um processo de limpeza de dados, tratamento de valores ausentes e label encoding.
-Colunas irrelevantes para o modelo foram retiradas por exemplo a coluna ['id'] , foi realizada a imputação com mediana de valores ausentes nas features concavity_worts e concavity points_worst e conversão de caracteres para números com labelEncoder na variavel target diagnostico.
+Antes do treinamento do modelo, foi realizado um pré-processamento para garantir a qualidade e consistência dos dados:
+
+Remoção de colunas irrelevantes – A coluna id foi descartada, pois não contribui para o aprendizado do modelo.
+
+Tratamento de valores ausentes – Foram encontrados valores faltantes em algumas variáveis (concavity_worst e concave points_worst). Esses valores foram preenchidos utilizando a mediana, por ser uma técnica robusta contra outliers.
+
+Codificação de variáveis categóricas – A variável alvo diagnosis foi transformada em valores numéricos por meio de Label Encoding (M = 1, B = 0), permitindo sua utilização pelo algoritmo de aprendizado.
 
 === "Code"
 
@@ -44,9 +51,15 @@ Colunas irrelevantes para o modelo foram retiradas por exemplo a coluna ['id'] ,
 
 # Divisão de Dados
 
-!!! example "Explicação da etapa de divisão de dados"
+!!! example "Separação em treino e teste"
 
-Na etapa de divisão de dados do dataset, na primeira etapa de divisão eles foram separados em uma proporção de 20% teste e 80% treino e na segunda etapa uma proporção de 30 % teste e 80% treino.
+O dataset foi dividido em conjuntos de treino e teste para permitir a avaliação do modelo em dados não vistos durante o treinamento. Foram utilizadas duas proporções distintas:
+
+Etapa I: 80% treino, 20% teste
+
+Etapa II: 70% treino, 30% teste
+
+Essa variação foi realizada para observar como a quantidade de dados de treino impacta o desempenho do modelo.
 
 === "Code"
 
@@ -57,11 +70,29 @@ Na etapa de divisão de dados do dataset, na primeira etapa de divisão eles for
 # Treinamento do modelo
 
 
-!!! example "ETAPA I:"
+
 Na etapa I o modelo foi testado e treinado usando uma proporção de 20% teste 80% treino, com essas porcentagens o modelo obteve um resultado 93% de acuracia.
 
-!!! example "ETAPA II:"
+
  Na etapa II o modelo foi testado e treinado usando uma proporção de 30% teste e 70% treino, com essas porcentagens o modelo obteve um  resultado de 90% de acuracia.
+
+!! example "Etapas do treinamento"
+
+Na etapa de treinamento, foi utilizado o algoritmo de Árvore de Decisão, por ser um método simples, interpretável e bastante utilizado em problemas de classificação inicial.
+
+!!! example "ETAPA I:"
+
+Divisão: 80% treino, 20% teste
+
+Resultado: 93% de acurácia
+
+!!! example "ETAPA II:"
+
+Divisão: 70% treino, 30% teste
+
+Resultado: 90% de acurácia
+
+Os resultados mostram que pequenas variações na divisão dos dados afetam a acurácia final, embora o desempenho geral do modelo tenha se mantido satisfatório.
 
 === "Code"
 
@@ -72,14 +103,9 @@ Na etapa I o modelo foi testado e treinado usando uma proporção de 20% teste 8
 
 # Avaliação do Modelo Final
 
+Após os testes iniciais, foi feita a avaliação final do modelo. O foco desta etapa foi verificar o comportamento da árvore de decisão em termos de acurácia e complexidade.
 
-Após realizar o treinamento do modelo em diferentes divisões de treino e teste, foi feita a avaliação final utilizando o algoritmo de árvore de decisão.
-
-O objetivo dessa etapa foi verificar como o modelo se comporta diante dos dados de teste, analisando métricas de desempenho como acurácia e a complexidade da árvore.
-
-Durante a avaliação, percebi que a árvore gerada estava ficando relativamente pequena, o que podia  indicar que o modelo está simplificando demais os padrões dos dados, porém corrigindo a quantidade de dados que estavam sendo usados, a árvore pareceu mais coesa.
-
-Ainda assim, os resultados mostraram uma acurácia razoável, o que significa que o modelo conseguiu classificar corretamente a maioria dos casos entre tumores benignos e malignos.
+A árvore gerada inicialmente se apresentou pequena, sugerindo que o modelo poderia estar simplificando demais os padrões dos dados (underfitting). Após ajustes na proporção de dados de treino, a árvore tornou-se mais consistente, refletindo melhor as relações entre as variáveis.
 
 
 !!! example "Breast Cancer Dataset"
