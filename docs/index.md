@@ -18,8 +18,8 @@
 
 ## Entregas
 
-- [x] Roteiro 1 - Data 29/08/2025
-- [ ] Roteiro 2
+- [x] Árvore de decisão - Data 29/08/2025
+- [ ] KNN - Data 16/09/2025
 - [ ] Roteiro 3
 - [ ] Roteiro 4
 - [ ] Projeto
