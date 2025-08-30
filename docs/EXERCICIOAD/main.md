@@ -104,6 +104,7 @@ O modelo alcançou 90% de acurácia no conjunto de teste, isso significa que, a 
 Embora existam modelos que possam alcançar valores um pouco maiores (como 95%+), a escolha dos 90% foi intencional:
 
 Por que 90% foi considerado adequado?
+
 - Balanceamento entre desempenho e generalização
 - Acima de 90%, o modelo começava a apresentar sinais de overfitting.
 
@@ -141,16 +142,16 @@ O modelo final com 90% de acurácia foi escolhido por representar o melhor equil
 
 !!! example "Resumo do Projeto"
 
-Este projeto teve como objetivo aplicar técnicas de Machine Learning para criar um modelo capaz de prever se um tumor de mama é benigno ou maligno, utilizando o dataset Breast Cancer Wisconsin (Diagnostic).
+Este projeto teve como objetivo aplicar técnicas de Machine Learning para criar um modelo capaz de prever se um tumor de mama é benigno ou maligno, utilizando o dataset Breast Cancer (Diagnostic).
 
-As etapas seguidas foram:
+- As etapas seguidas foram:
 
 Exploração de dados - Pré-processamento - Divisão de dados – separação em treino e teste -
 Treinamento do modelo - Avaliação do modelo – análise do desempenho final com base na acurácia e na estrutura da árvore.
 
 
 !!! success "Resultados Obtidos"
-Acurácia variando entre 90% e 93%, dependendo da proporção de treino/teste utilizada.
+- Acurácia variando entre 90% e 93%, dependendo da proporção de treino/teste utilizada.
 
 
 !!! tip "Conclusão"
