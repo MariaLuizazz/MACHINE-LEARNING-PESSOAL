@@ -106,16 +106,12 @@ Por que 90% foi considerado adequado?
 
 - Balanceamento entre desempenho e generalização
 - Acima de 90%, o modelo começava a apresentar sinais de overfitting.
-- Os 90% garantem que o modelo é confiável e generaliza melhor para novos pacientes.
 
-Cenário do dataset
-
-- O modelo de 90% apresentou bom equilíbrio entre acerto de benignos e malignos, o que é essencial em aplicações médicas.
 
 Importância clínica
 
 - No contexto de câncer de mama, evitar falsos negativos (não detectar um tumor maligno) é prioridade.
-- O modelo de 90% não só manteve acurácia alta, como também preservou um bom recall para a classe Maligna, reduzindo o risco de diagnósticos perigosamente errados.
+
 
 !!! tip "Conclusão da Avaliação"
 O modelo final com 90% de acurácia foi escolhido por representar o melhor equilíbrio entre desempenho, generalização e relevância prática para o contexto médico.
