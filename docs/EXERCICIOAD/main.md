@@ -104,6 +104,7 @@ Embora existam modelos que possam alcançar valores um pouco maiores (como 95%+)
 
 Por que 90% foi considerado adequado?
 
+
 - Balanceamento entre desempenho e generalização
 - Acima de 90%, o modelo começava a apresentar sinais de overfitting.
 
