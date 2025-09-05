@@ -20,7 +20,7 @@ label_encoder = LabelEncoder()
 df['diagnosis'] = label_encoder.fit_transform(df['diagnosis'])
 
 #features escolhidas, todas menos diagnosis e id
-x = df.drop(columns=['diagnosis'])
+X = df.drop(columns=['diagnosis'])
 y = df['diagnosis']
 
 #imputação com mediana de valores ausentes nas features concavity_worts e concavity points_worst
