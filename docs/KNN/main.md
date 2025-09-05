@@ -13,3 +13,15 @@ Total de registros: 569 amostras
 Variável alvo: diagnosis (M = maligno, B = benigno)
 
 Número de variáveis preditoras: 30 atributos numéricos relacionados ao tamanho, textura, formato e concavidade das células.
+
+# Pré processamento
+
+!!! example "Explicação dos processos realizados no pré-processamento"
+
+Antes do treinamento do modelo, foi realizado um pré-processamento para garantir a qualidade e consistência dos dados:
+
+Remoção de colunas irrelevantes – A coluna id foi descartada, pois não contribui para o aprendizado do modelo.
+
+Tratamento de valores ausentes – Foram encontrados valores faltantes em algumas variáveis (concavity_worst e concave points_worst). Esses valores foram preenchidos utilizando a mediana, por ser uma técnica robusta contra outliers.
+
+Codificação de variáveis categóricas – A variável alvo diagnosis foi transformada em valores numéricos por meio de Label Encoding (M = 1, B = 0), permitindo sua utilização pelo algoritmo de aprendizado.
