@@ -65,3 +65,5 @@ Codificação de variáveis categóricas – A variável alvo diagnosis foi tran
     ```
 
 # Avaliação do modelo
+
+ (M = 1, B = 0)
