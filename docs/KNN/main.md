@@ -16,7 +16,7 @@ Número de variáveis preditoras: 30 atributos numéricos relacionados ao tamanh
 
 === "Code"
 
-    ```python
+    ```python exec="0"
     --8<-- "docs/kNN/exploracaodedados.py"
     ``` 
 === "Resultado"
@@ -40,15 +40,14 @@ Codificação de variáveis categóricas – A variável alvo diagnosis foi tran
 
 === "Code"
 
-    ```python
+    ```python exec="0"
     --8<-- "docs/KNN/Preprocessamento.py"
     ``` 
 === "Resultado"
 
     ```python exec="on" html="0"
-    --8<-- "docs/EXERCICIOAD/prepocessamento.py"
+    --8<-- "docs/KNN/prepocessamento.py"
     ```
-
 
 
 # gráfico
