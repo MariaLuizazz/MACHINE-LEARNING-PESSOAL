@@ -14,6 +14,18 @@ Variável alvo: diagnosis (M = maligno, B = benigno)
 
 Número de variáveis preditoras: 30 atributos numéricos relacionados ao tamanho, textura, formato e concavidade das células.
 
+=== "Code"
+
+    ```python
+    --8<-- "docs/kNN/exploracaodedados.py"
+    ``` 
+=== "Resultado"
+
+    ```python exec="on" html="0"
+    --8<-- "docs/KNN/exploracaodedados.py"
+    ```
+
+
 # Pré processamento
 
 !!! example "Explicação dos processos realizados no pré-processamento"
