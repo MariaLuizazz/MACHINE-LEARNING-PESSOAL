@@ -26,10 +26,25 @@ Tratamento de valores ausentes – Foram encontrados valores faltantes em alguma
 
 Codificação de variáveis categóricas – A variável alvo diagnosis foi transformada em valores numéricos por meio de Label Encoding (M = 1, B = 0), permitindo sua utilização pelo algoritmo de aprendizado.
 
+=== "Code"
+
+    ```python
+    --8<-- "docs/KNN/Preprocessamento.py"
+    ``` 
+=== "Resultado"
+
+    ```python exec="on" html="0"
+    --8<-- "docs/EXERCICIOAD/prepocessamento.py"
+    ```
+
+
+
+# gráfico
+
 === "Result"
 
     ```python exec="1" html="1"
-    --8<-- "docs/KNN/prepocessamento.py"
+    --8<-- "docs/KNN/knn.py"
     ```
 
 === "Code"
