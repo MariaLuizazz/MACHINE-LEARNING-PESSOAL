@@ -32,7 +32,7 @@ df['concavity_mean'].fillna(df['concavity_mean'].median(), inplace=True)
 df['concave points_mean'].fillna(df['concave points_mean'].median(), inplace=True)
 
 #Separação de treino e teste
-X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42, stratify=y)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
 #Treianamento do KNN
 knn = KNeighborsClassifier(n_neighbors=3)
