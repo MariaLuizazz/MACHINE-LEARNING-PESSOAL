@@ -18,4 +18,5 @@ tabulate
 scikit-learn
 kagglehub
 tables
+seaborn
 
