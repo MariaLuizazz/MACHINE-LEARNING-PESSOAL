@@ -82,12 +82,24 @@ Portanto, as varaveis mais importantes do meu dataset para o diagnostico seriam 
     --8<-- "docs/KNN/knnII.py"
     ```
 
-=== "Result"
 
-    ```python exec="1" html="1"
-    --8<-- "docs/KNN/knnIII.py"
-    ```
 
 # Relatorio final
 
+O modelo KNN com k=3 memoriza os dados de treino e usa distância para fazer previsões"
 
+"Para cada novo tumor, ele encontra os 3 tumores mais similares no conjunto de treino e decide pela maioria"
+
+Sobre a Avaliação:
+"Testamos o modelo com dados que ele nunca viu (conjunto de teste)"
+
+"A acurácia de X% nos mostra que o modelo acerta X em cada 100 previsões"
+
+"Valores acima de 85% são geralmente considerados bons para diagnóstico médico"
+
+Sobre a Visualização:
+"A fronteira de decisão mostra como o modelo separa tumores benignos de malignos"
+
+"Áreas coloridas mostram onde o modelo prevê cada classe"
+
+"Pontos são os dados reais, mostrando onde o modelo acerta ou erra"
