@@ -61,7 +61,7 @@ Z = knn.predict(np.c_[xx.ravel(), yy.ravel()])
 Z = Z.reshape(xx.shape)
 
 #gráfico final
-plt.contourf(xx, yy, Z, cmap=plt.cm.RdYlBu, alpha=0.3)
+plt.contourf(xx, yy, Z, cmap=plt.cm.viridis, alpha=0.3)#cor do grafico
 sns.scatterplot(x=X.iloc[:, 0], y=X.iloc[:, 1], hue=y_labels, style=y_labels, palette="deep", s=100) #motivooooooo do errroo
 plt.xlabel("radius_mean")
 plt.ylabel("texture_mean")

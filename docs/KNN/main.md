@@ -51,7 +51,7 @@ Codificação de variáveis categóricas – A variável alvo diagnosis foi tran
 
 # Divisão dos dados, Treinamento do Modelo e Avaliação do Modelo.
 
-!!! sucess "O dataset foi dividido em conjuntos de treino e teste com uma proporção de 80% treino e 20% teste.!
+!!! sucess "O dataset foi dividido em conjuntos de treino e teste com uma proporção de 80% treino e 20% teste."
 
 
 O questionamento principal foi: Quais features são mais relevantes para o diagnostico de cancer de mama de acordo com o meu dataset? 
