@@ -42,11 +42,20 @@ Codificação de variáveis categóricas – A variável alvo diagnosis foi tran
 === "Resultado"
 
     ```python exec="on" html="0"
-    --8<-- "docs/KNN/prepo.py"
+    --8<-- "docs/KNN/prepro.py"
     ```
 
 
-# gráfico
+# Divisão dos dados, Treinamento do Modelo e Avaliação do Modelo.
+
+Questionamento principal: Quais features são mais relevantes para o diagnostico de cancer de mama de acordo com o meu dataset? 
+
+Ao analisarmos o dataset, lembrar que trata- se da previsão de um dignostico é preciso entender a base e o que queremos, em uma pesquisa rapida para entender melhor conclui que, para a escolha das minhas features eu deveria ficar atenta á : 
+
+Se o nódulo é redondo, pequeno e com bordas suaves → mais provável benigno.
+Se o nódulo é grande, irregular, com bordas cheias de reentrâncias → mais provável maligno.
+
+Portanto, as varaveis mais importantes do meu dataset para o diagnostico seriam: radius_mean, perimeter_mean e texture_mean.
 
 === "Result"
 
@@ -58,6 +67,13 @@ Codificação de variáveis categóricas – A variável alvo diagnosis foi tran
 
     ```python exec="0"
     --8<-- "docs/KNN/knn.py"
+    ```
+
+
+=== "Result"
+
+    ```python exec="1" html="1"
+    --8<-- "docs/KNN/knnII.py"
     ```
 
 # Avaliação do modelo
