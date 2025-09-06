@@ -4,7 +4,7 @@
 
 O câncer de mama é o tipo de câncer mais comum entre mulheres em todo o mundo, responsável por aproximadamente 25% de todos os casos e afetando milhões de pessoas todos os anos. Ele se desenvolve quando células da mama começam a crescer de forma descontrolada, formando tumores que podem ser identificados por exames de imagem (raios-X) ou detectados como nódulos.
 
-O principal desafio no diagnóstico é diferenciar corretamente os tumores malignos (cancerosos) dos benignos (não cancerosos). O objetivo deste projeto é desenvolver um modelo de classificação supervisionada capaz de prever, com base em atributos numéricos das células, se um tumor é maligno ou benigno, e estabelcer um diagnostico confiavel.
+O principal desafio no diagnóstico é diferenciar corretamente os tumores malignos (cancerosos) dos benignos (não cancerosos). O objetivo deste projeto é desenvolver um modelo de classificação supervisionada capaz de prever, com base em atributos numéricos das células, se um tumor é maligno ou benigno, e estabelecer um diagnóstico confiável.
 
 !!! tip "Sobre o Dataset"
 
@@ -34,7 +34,7 @@ Tratamento de valores ausentes – Foram encontrados valores faltantes em alguma
 
 Codificação de variáveis categóricas – A variável alvo diagnosis foi transformada em valores numéricos por meio de Label Encoding (M = 1, B = 0), permitindo sua utilização pelo algoritmo de aprendizado.
 
-!!! example "Todos os processos de pré - processamento feito no algoritmo de árvore de decisão foram feitos também no algoritimo de KNN."
+!!! example "Todos os processos de pré-processamento feitos no algoritmo de árvore de decisão foram feitos também no algoritmo de KNN."
 
 
 === "Code"
@@ -53,18 +53,15 @@ Codificação de variáveis categóricas – A variável alvo diagnosis foi tran
 
 !!! sucess "O dataset foi dividido em conjuntos de treino e teste com uma proporção de 80% treino e 20% teste."
 
+O questionamento principal foi: Quais features são mais relevantes para o diagnóstico de câncer de mama de acordo com o que foi fornecido no meu dataset?
 
-O questionamento principal foi: Quais features são mais relevantes para o diagnostico de cancer de mama de acordo com o meu dataset? 
-
-Ao analisar o dataset, foi bom lembrar que trata- se da previsão de um dignostico, é preciso entender a base e o que eu quero prever, em uma pesquisa rapida para entender melhor conclui que: para a escolha das minhas features eu deveria ficar atenta as minhas variaveis mais relevantes.
+Ao analisar o dataset, foi bom lembrar que trata-se da previsão de um diagnóstico, é preciso entender a base e o que eu quero prever. Em uma pesquisa rápida para entender melhor, concluí que: para a escolha das minhas features eu deveria ficar atenta às minhas variáveis mais relevantes.
 
 Se o nódulo é redondo, pequeno e com bordas suaves → mais provável benigno.
 Se o nódulo é grande, irregular, com bordas cheias de reentrâncias → mais provável maligno.
 Nódulos malignos costumam ser maiores, com contornos irregulares e não lisos, enquanto benignos tendem a ser mais arredondados e bem delimitados.
 
-Portanto, as varaveis mais importantes do meu dataset para o diagnostico seriam aquelas que especificam tamanho, formato  e textura do nodulo, no caso as variaveis escolhidas foram: texture_mean e radius_mean.
-
-
+Portanto, as variáveis mais importantes do meu dataset para o diagnóstico seriam aquelas que especificam tamanho, formato e textura do nódulo. No caso, as variáveis escolhidas foram: texture_mean e radius_mean.
 
 === "Result"
 
@@ -80,15 +77,16 @@ Portanto, as varaveis mais importantes do meu dataset para o diagnostico seriam 
 
 
 
-
 # Relatorio final
 
-O modelo KNN com k=3 memoriza os dados de treino e usa distância para fazer previsões.Para cada novo tumor, ele encontra os 3 tumores mais similares no conjunto de treino e decide pela maioria
+- O modelo KNN com k=3 memoriza os dados de treino e usa distância para fazer previsões. Para cada novo tumor, ele encontra os 3 tumores mais similares no conjunto de treino e decide pela maioria.
 
-Sobre a Avaliação:
-Após a etapa de treino e teste, o processo entregou  uma acurácia de 86% que nos mostra que o modelo acerta 86 em cada 100 previsões.Valores acima de 85% são geralmente considerados bons para diagnóstico médico.
+- Sobre a Avaliação:
+Após a etapa de treino e teste, o processo entregou uma acurácia de 86% que nos mostra que o modelo acerta 86 em cada 100 previsões. Valores acima de 85% são geralmente considerados bons para diagnóstico médico.
 
-Sobre a Visualização:
-A fronteira de decisão mostra como o modelo separa tumores benignos de malignos, áreas coloridas mostram onde o modelo prevê cada classe.
+- Sobre a Visualização:
+A fronteira de decisão mostra como o modelo separa tumores benignos de malignos. Áreas coloridas mostram onde o modelo prevê cada classe.
+
+
 
 
