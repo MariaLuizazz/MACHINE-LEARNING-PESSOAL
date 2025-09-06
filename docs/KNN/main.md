@@ -4,7 +4,7 @@
 
 O câncer de mama é o tipo de câncer mais comum entre mulheres em todo o mundo, responsável por aproximadamente 25% de todos os casos e afetando milhões de pessoas todos os anos. Ele se desenvolve quando células da mama começam a crescer de forma descontrolada, formando tumores que podem ser identificados por exames de imagem (raios-X) ou detectados como nódulos.
 
-O principal desafio no diagnóstico é diferenciar corretamente os tumores malignos (cancerosos) dos benignos (não cancerosos). O objetivo deste projeto é desenvolver um modelo de classificação supervisionada capaz de prever, com base em atributos numéricos das células, se um tumor é maligno ou benigno.
+O principal desafio no diagnóstico é diferenciar corretamente os tumores malignos (cancerosos) dos benignos (não cancerosos). O objetivo deste projeto é desenvolver um modelo de classificação supervisionada capaz de prever, com base em atributos numéricos das células, se um tumor é maligno ou benigno, e estabelcer um diagnostico confiavel.
 
 !!! tip "Sobre o Dataset"
 
@@ -34,6 +34,9 @@ Tratamento de valores ausentes – Foram encontrados valores faltantes em alguma
 
 Codificação de variáveis categóricas – A variável alvo diagnosis foi transformada em valores numéricos por meio de Label Encoding (M = 1, B = 0), permitindo sua utilização pelo algoritmo de aprendizado.
 
+!!! example "Todos os processos de pré - processamento feito no algoritmo de árvore de decisão foram feitos também no algoritimo de KNN."
+
+
 === "Code"
 
     ```python exec="0"
@@ -50,13 +53,15 @@ Codificação de variáveis categóricas – A variável alvo diagnosis foi tran
 
 Questionamento principal: Quais features são mais relevantes para o diagnostico de cancer de mama de acordo com o meu dataset? 
 
-Ao analisarmos o dataset, lembrar que trata- se da previsão de um dignostico é preciso entender a base e o que queremos, em uma pesquisa rapida para entender melhor conclui que, para a escolha das minhas features eu deveria ficar atenta á : 
+Ao analisar o dataset, é bom lembrar que trata- se da previsão de um dignostico é preciso entender a base e o que queremos, em uma pesquisa rapida para entender melhor conclui que, para a escolha das minhas features eu deveria ficar atenta á: 
 
 Se o nódulo é redondo, pequeno e com bordas suaves → mais provável benigno.
 Se o nódulo é grande, irregular, com bordas cheias de reentrâncias → mais provável maligno.
 Nódulos malignos costumam ser maiores, com contornos irregulares e não lisos, enquanto benignos tendem a ser mais arredondados e bem delimitados.
 
-Portanto, as varaveis mais importantes do meu dataset para o diagnostico seriam aquelas que especificam tamanho e formato do nodulo: (radius_mean, perimeter_mean e texture_mean) e ()
+Portanto, as varaveis mais importantes do meu dataset para o diagnostico seriam aquelas que especificam tamanho, formato  e textura do nodulo: (radius_mean, perimeter_mean e texture_mean) e ()
+
+ (M = 1, B = 0)
 
 === "Result"
 
@@ -83,6 +88,6 @@ Portanto, as varaveis mais importantes do meu dataset para o diagnostico seriam 
     --8<-- "docs/KNN/knnIII.py"
     ```
 
-# Avaliação do modelo
+# Relatorio final
 
- (M = 1, B = 0)
+

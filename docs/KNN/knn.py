@@ -50,8 +50,7 @@ print(f"Accuracy: {accuracy_score(y_test, predictions):.2f}")
 h = 0.01  
 x_min, x_max = X.iloc[:, 0].min() - 1, X.iloc[:, 0].max() + 1
 y_min, y_max = X.iloc[:, 1].min() - 1, X.iloc[:, 1].max() + 1
-xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
-                     np.arange(y_min, y_max, h))
+xx, yy = np.meshgrid(np.arange(x_min, x_max, h),np.arange(y_min, y_max, h))
 
 #Prevendo classe em cada ponto
 Z = knn.predict(np.c_[xx.ravel(), yy.ravel()])

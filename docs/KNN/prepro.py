@@ -27,4 +27,4 @@ y = df['diagnosis']
 df['concavity_mean'].fillna(df['concavity_mean'].median(), inplace=True)
 df['concave points_mean'].fillna(df['concave points_mean'].median(), inplace=True)
 
-print(df.to_markdown(index=False))
+print(df.sample(n=10, random_state=42).to_markdown(index=False))
