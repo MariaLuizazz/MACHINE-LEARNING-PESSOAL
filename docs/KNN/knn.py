@@ -62,7 +62,7 @@ Z = Z.reshape(xx.shape)
 
 #gráfico final
 plt.contourf(xx, yy, Z, cmap=plt.cm.RdYlBu, alpha=0.3)
-sns.scatterplot(x=X.iloc[:, 0], y=X.iloc[:, 1], hue=y_labels, style=y, palette="deep", s=100) #motivooooooo do errroo
+sns.scatterplot(x=X.iloc[:, 0], y=X.iloc[:, 1], hue=y_labels, style=y_labels, palette="deep", s=100) #motivooooooo do errroo
 plt.xlabel("radius_mean")
 plt.ylabel("texture_mean")
 plt.title("KNN Decision Boundary (k=3)")
