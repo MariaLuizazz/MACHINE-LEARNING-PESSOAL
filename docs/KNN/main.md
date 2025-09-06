@@ -51,17 +51,20 @@ Codificação de variáveis categóricas – A variável alvo diagnosis foi tran
 
 # Divisão dos dados, Treinamento do Modelo e Avaliação do Modelo.
 
-Questionamento principal: Quais features são mais relevantes para o diagnostico de cancer de mama de acordo com o meu dataset? 
+!!! sucess "O dataset foi dividido em conjuntos de treino e teste com uma proporção de 80% treino e 20% teste.!
 
-Ao analisar o dataset, é bom lembrar que trata- se da previsão de um dignostico é preciso entender a base e o que queremos, em uma pesquisa rapida para entender melhor conclui que, para a escolha das minhas features eu deveria ficar atenta á: 
+
+O questionamento principal foi: Quais features são mais relevantes para o diagnostico de cancer de mama de acordo com o meu dataset? 
+
+Ao analisar o dataset, foi bom lembrar que trata- se da previsão de um dignostico, é preciso entender a base e o que eu quero prever, em uma pesquisa rapida para entender melhor conclui que: para a escolha das minhas features eu deveria ficar atenta as minhas variaveis mais relevantes.
 
 Se o nódulo é redondo, pequeno e com bordas suaves → mais provável benigno.
 Se o nódulo é grande, irregular, com bordas cheias de reentrâncias → mais provável maligno.
 Nódulos malignos costumam ser maiores, com contornos irregulares e não lisos, enquanto benignos tendem a ser mais arredondados e bem delimitados.
 
-Portanto, as varaveis mais importantes do meu dataset para o diagnostico seriam aquelas que especificam tamanho, formato  e textura do nodulo: (radius_mean, perimeter_mean e texture_mean) e ()
+Portanto, as varaveis mais importantes do meu dataset para o diagnostico seriam aquelas que especificam tamanho, formato  e textura do nodulo, no caso as variaveis escolhidas foram: texture_mean e radius_mean.
 
- (M = 1, B = 0)
+
 
 === "Result"
 
@@ -76,30 +79,16 @@ Portanto, as varaveis mais importantes do meu dataset para o diagnostico seriam 
     ```
 
 
-=== "Result"
-
-    ```python exec="1" html="1"
-    --8<-- "docs/KNN/knnII.py"
-    ```
-
 
 
 # Relatorio final
 
-O modelo KNN com k=3 memoriza os dados de treino e usa distância para fazer previsões"
-
-"Para cada novo tumor, ele encontra os 3 tumores mais similares no conjunto de treino e decide pela maioria"
+O modelo KNN com k=3 memoriza os dados de treino e usa distância para fazer previsões.Para cada novo tumor, ele encontra os 3 tumores mais similares no conjunto de treino e decide pela maioria
 
 Sobre a Avaliação:
-"Testamos o modelo com dados que ele nunca viu (conjunto de teste)"
-
-"A acurácia de X% nos mostra que o modelo acerta X em cada 100 previsões"
-
-"Valores acima de 85% são geralmente considerados bons para diagnóstico médico"
+Após a etapa de treino e teste, o processo entregou  uma acurácia de 86% que nos mostra que o modelo acerta 86 em cada 100 previsões.Valores acima de 85% são geralmente considerados bons para diagnóstico médico.
 
 Sobre a Visualização:
-"A fronteira de decisão mostra como o modelo separa tumores benignos de malignos"
+A fronteira de decisão mostra como o modelo separa tumores benignos de malignos, áreas coloridas mostram onde o modelo prevê cada classe.
 
-"Áreas coloridas mostram onde o modelo prevê cada classe"
 
-"Pontos são os dados reais, mostrando onde o modelo acerta ou erra"
