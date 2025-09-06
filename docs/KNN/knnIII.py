@@ -25,7 +25,7 @@ df['diagnosis'] = label_encoder.fit_transform(df['diagnosis'])
 
 
 #escolha de features
-X = df[['concavity_mean', 'concave points_mean']]
+X = df[['area_mean', 'compactness_mean']]
 y = df['diagnosis']
 
 
@@ -60,8 +60,8 @@ Z = Z.reshape(xx.shape)
 #gráfico final
 plt.contourf(xx, yy, Z, cmap=plt.cm.RdYlBu, alpha=0.3)
 sns.scatterplot(x=X.iloc[:, 0], y=X.iloc[:, 1], hue=y, style=y, palette="deep", s=100) #motivooooooo do errroo
-plt.xlabel("radius_mean")
-plt.ylabel("perimeter_mean")
+plt.xlabel("area_mean")
+plt.ylabel("compactness_mean")
 plt.title("KNN Decision Boundary (k=3)")
 
 
