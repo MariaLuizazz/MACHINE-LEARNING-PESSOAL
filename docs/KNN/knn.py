@@ -51,34 +51,29 @@ y_labels = y.map(labels_map)
 
 
 #Preparação para o gráfico da fronteira de decisão(malha de visualização)
-# Preparação para o gráfico da fronteira de decisão(malha de visualização)
-h = 0.01  
+h = 0.02
 x_min, x_max = X.iloc[:, 0].min() - 1, X.iloc[:, 0].max() + 1
 y_min, y_max = X.iloc[:, 1].min() - 1, X.iloc[:, 1].max() + 1
-xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
+xx, yy = np.meshgrid(np.arange(x_min, x_max, h),np.arange(y_min, y_max, h))
 
-# Prevendo classe em cada ponto
+#Prevendo classe em cada ponto
 Z = knn.predict(np.c_[xx.ravel(), yy.ravel()])
 Z = Z.reshape(xx.shape)
 
-# gráfico final - COM NOVAS CORES
-plt.figure(figsize=(10, 8))
-plt.contourf(xx, yy, Z, cmap=plt.cm.RdYlGn_r, alpha=0.3)  # ⭐ CORES ALTERADAS AQUI
+#gráfico final
+plt.contourf(xx, yy, Z, cmap=plt.cm.RdYlGn_r, alpha=0.3)
+sns.scatterplot(x=X.iloc[:, 0], y=X.iloc[:, 1], hue=y_labels, style=y_labels, palette="deep", s=100) #motivooooooo do errroo
+plt.xlabel("radius_mean")
+plt.ylabel("texture_mean")
+plt.title("KNN Decision Boundary (k=3) -  Diagnóstico de Câncer")
+plt.legend(title="Diagnóstico", labels=['Benigno', 'Maligno'])  
 
-# Definindo labels para as classes
-y_labels = y.map({0: 'Benigno', 1: 'Maligno'})
 
-sns.scatterplot(x=X.iloc[:, 0], y=X.iloc[:, 1], hue=y_labels, 
-                style=y_labels, palette={'Benigno': 'green', 'Maligno': 'red'}, 
-                s=100, edgecolor='black', linewidth=0.5)
 
-plt.xlabel("radius_mean (Raio Médio)")
-plt.ylabel("texture_mean (Textura Média)")
-plt.title("Fronteira de Decisão - KNN (k=3) para Diagnóstico de Câncer")
-plt.legend(title="Diagnóstico")
-
-# Exibição do gráfico
+#Exibição do gráfico
 buffer = StringIO()
 plt.savefig(buffer, format="svg", transparent=True)
 print(buffer.getvalue())
+
+
 
