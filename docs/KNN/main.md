@@ -54,8 +54,9 @@ Ao analisarmos o dataset, lembrar que trata- se da previsão de um dignostico é
 
 Se o nódulo é redondo, pequeno e com bordas suaves → mais provável benigno.
 Se o nódulo é grande, irregular, com bordas cheias de reentrâncias → mais provável maligno.
+Nódulos malignos costumam ser maiores, com contornos irregulares e não lisos, enquanto benignos tendem a ser mais arredondados e bem delimitados.
 
-Portanto, as varaveis mais importantes do meu dataset para o diagnostico seriam: radius_mean, perimeter_mean e texture_mean.
+Portanto, as varaveis mais importantes do meu dataset para o diagnostico seriam aquelas que especificam tamanho e formato do nodulo: (radius_mean, perimeter_mean e texture_mean) e ()
 
 === "Result"
 
@@ -74,6 +75,12 @@ Portanto, as varaveis mais importantes do meu dataset para o diagnostico seriam:
 
     ```python exec="1" html="1"
     --8<-- "docs/KNN/knnII.py"
+    ```
+
+=== "Result"
+
+    ```python exec="1" html="1"
+    --8<-- "docs/KNN/knnIII.py"
     ```
 
 # Avaliação do modelo

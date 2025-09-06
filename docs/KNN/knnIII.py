@@ -25,7 +25,7 @@ df['diagnosis'] = label_encoder.fit_transform(df['diagnosis'])
 
 
 #escolha de features
-X = df[['symmetry_mean', 'perimeter_mean']]
+X = df[['radius_mean', 'concave points_mean']]
 y = df['diagnosis']
 
 
