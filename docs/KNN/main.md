@@ -30,7 +30,7 @@ Antes do treinamento do modelo, foi realizado um pré-processamento para garanti
 
 Remoção de colunas irrelevantes – A coluna id foi descartada, pois não contribui para o aprendizado do modelo.
 
-Tratamento de valores ausentes – Foram encontrados valores faltantes em algumas variáveis (concavity_worst e concave points_worst). Esses valores foram preenchidos utilizando a mediana, por ser uma técnica robusta contra outliers.
+Tratamento de valores ausentes – Foram encontrados valores faltantes em algumas variáveis (concavity_worst e concave points_worst). Esses valores foram preenchidos utilizando a mediana.
 
 Codificação de variáveis categóricas – A variável alvo diagnosis foi transformada em valores numéricos por meio de Label Encoding (M = 1, B = 0), permitindo sua utilização pelo algoritmo de aprendizado.
 
@@ -82,10 +82,10 @@ Portanto, as variáveis mais importantes do meu dataset para o diagnóstico seri
 - O modelo KNN com k=3 memoriza os dados de treino e usa distância para fazer previsões. Para cada novo tumor, ele encontra os 3 tumores mais similares no conjunto de treino e decide pela maioria.
 
 - Sobre a Avaliação:
-Após a etapa de treino e teste, o processo entregou uma acurácia de 86% que nos mostra que o modelo acerta 86 em cada 100 previsões. Valores acima de 85% são geralmente considerados bons para diagnóstico médico.
+Após a etapa de treino e teste, o processo entregou uma acurácia de 86% que nos mostra que o modelo acerta 86 em cada 100 previsões. 
 
 - Sobre a Visualização:
-A fronteira de decisão mostra como o modelo separa tumores benignos de malignos. Áreas coloridas mostram onde o modelo prevê cada classe.
+A fronteira de decisão mostra como o modelo separa tumores benignos de malignos. Áreas coloridas mostram onde o modelo prevê cada classe. Observando o modelo e a acurácia o modelo apresenta sinais de overfitting.
 
 
 
