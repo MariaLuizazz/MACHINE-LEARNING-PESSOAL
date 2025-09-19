@@ -138,5 +138,5 @@ nav:
   - ATIVIDADES:
     - Árvore de decisão: ./EXERCICIOAD/main.md
     - KNN: ./KNN/main.md
-    - KMEANS: ./KMEANS/MAIN.md
+    - KMEANS: ./KMEANS/main.md
   - Projeto: ./projeto/main.md
