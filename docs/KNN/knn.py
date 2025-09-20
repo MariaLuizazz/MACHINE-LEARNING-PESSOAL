@@ -33,7 +33,7 @@ X = df[['radius_mean', 'texture_mean']]
 y = df['diagnosis']
 
 #Separação de treino e teste
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
 
 #Treianamento do KNN
 knn = KNeighborsClassifier(n_neighbors=5)
