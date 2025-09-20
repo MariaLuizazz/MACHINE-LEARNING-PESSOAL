@@ -8,6 +8,8 @@ from sklearn.metrics import accuracy_score
 import seaborn as sns
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import cross_val_score
+from sklearn.metrics import confusion_matrix
 
 
 plt.figure(figsize=(12,10))
@@ -77,3 +79,15 @@ print(buffer.getvalue())
 
 
 
+# 1. Validação Cruzada
+scores = cross_val_score(knn, X, y, cv=5)
+print(f"Validação Cruzada: {scores.mean():.3f} ± {scores.std():.3f}")
+
+# 2. Comparar com k maior
+knn_k11 = KNeighborsClassifier(n_neighbors=11)
+knn_k11.fit(X_train, y_train)
+print(f"K=11 Accuracy: {accuracy_score(y_test, knn_k11.predict(X_test)):.3f}")
+
+# 3. Matriz de Confusão
+print("Matriz de Confusão:")
+print(confusion_matrix(y_test, predictions))
