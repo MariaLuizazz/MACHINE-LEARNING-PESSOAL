@@ -121,7 +121,7 @@ O modelo balanceado com K=11 é MAIS SEGURO que a versão anterior, reduzindo os
 
 # Relatorio final
 
-- O modelo KNN com k=3 memoriza os dados de treino e usa distância para fazer previsões. Para cada novo tumor, ele encontra os 3 tumores mais similares no conjunto de treino e decide pela maioria, a esma coisa ocrre com k = 11.
+- O modelo KNN com k=3 memoriza os dados de treino e usa distância para fazer previsões. Para cada novo tumor, ele encontra os 3 tumores mais similares no conjunto de treino e decide pela maioria, a mesma coisa ocorre com k = 11.
 
 - Sobre a Avaliação:
 Após a etapa de treino e teste, o processo entregou uma acurácia de 86% que nos mostra que o modelo acerta 86 em cada 100 previsões. 
@@ -129,6 +129,11 @@ Após a etapa de treino e teste, o processo entregou uma acurácia de 86% que no
 - Sobre a Visualização:
 A fronteira de decisão mostra como o modelo separa tumores benignos de malignos. Áreas coloridas mostram onde o modelo prevê cada classe. Observando o modelo e a acurácia o modelo apresenta sinais de overfitting.
 
+Conclusões
+- O balanceamento com SMOTE foi crucial para melhorar a detecção de casos malignos
+- k=11 mostrou-se superior a k=3 para este problema médico
+- A troca especificidade-sensibilidade foi clinicamente vantajosa
+- O modelo balanceado é mais seguro para aplicação clínica
 
 
 
