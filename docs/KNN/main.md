@@ -63,7 +63,7 @@ Nódulos malignos costumam ser maiores, com contornos irregulares e não lisos, 
 
 Portanto, as variáveis mais importantes do meu dataset para o diagnóstico seriam aquelas que especificam tamanho, formato e textura do nódulo. No caso, as variáveis escolhidas foram: texture_mean e radius_mean.
 
- !!!test "TESTE 1 "
+ !!! test "TESTE 1 "
 
  Ao analiser o primeiro gráfico, o modelo paresentou sinais de overfitting, realizando uma validação cruzada e matriz de confusão foi  possível constatar que de acordo com o modelo: 
 
@@ -103,7 +103,9 @@ APLICAÇAÕ Do smote apenas nos dados de treino, sem vazmento de informações p
 
     ```python exec="0"
     --8<-- "docs/KNN/knnBalanceado.py"
+    ```
 
+    
 # Relatorio final
 
 - O modelo KNN com k=3 memoriza os dados de treino e usa distância para fazer previsões. Para cada novo tumor, ele encontra os 3 tumores mais similares no conjunto de treino e decide pela maioria.
