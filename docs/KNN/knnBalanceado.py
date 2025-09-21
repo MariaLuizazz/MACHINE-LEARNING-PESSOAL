@@ -73,7 +73,7 @@ plt.contourf(xx, yy, Z, cmap=plt.cm.RdYlGn_r, alpha=0.3)
 sns.scatterplot(x=X.iloc[:, 0], y=X.iloc[:, 1], hue=y_labels, style=y_labels, palette={'Benigno': 'green', 'Maligno': 'red'}, s=100) #motivooooooo do errroo
 plt.xlabel("radius_mean")
 plt.ylabel("texture_mean")
-plt.title("KNN Decision Boundary (k=3) - Diagnóstico de Câncer (Com Balanceamento SMOTE)")
+plt.title("KNN Decision Boundary (k=11) - Diagnóstico de Câncer (Com Balanceamento SMOTE)")
 plt.legend(title="Diagnóstico")  
 
 
@@ -90,10 +90,7 @@ from sklearn.model_selection import cross_val_score
 scores = cross_val_score(knn, X, y, cv=5)
 print(f"Validação Cruzada: {scores.mean():.3f} ± {scores.std():.3f}")
 
-# 2. Comparar com k maior
-knn_k11 = KNeighborsClassifier(n_neighbors=3)
-knn_k11.fit(X_train, y_train)
-print(f"K=3 Accuracy: {accuracy_score(y_test, knn_k11.predict(X_test)):.3f}")
+
 
 # 3. Matriz de Confusão
 from sklearn.metrics import confusion_matrix

@@ -118,6 +118,20 @@ O modelo balanceado com K=11 é MAIS SEGURO que a versão anterior, reduzindo os
     --8<-- "docs/KNN/knnBalanceado.py"
     ```
 
+!!! "TESTE 3 "
+
+
+=== "Result"
+
+    ```python exec="1" html="1"
+    --8<-- "docs/KNN/knnPCA.py"
+    ```
+
+=== "Code"
+
+    ```python exec="0"
+    --8<-- "docs/KNN/knnPCA.py"
+    ```
 
 # Relatorio final
 
