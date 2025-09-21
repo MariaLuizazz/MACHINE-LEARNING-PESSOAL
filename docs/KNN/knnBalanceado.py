@@ -30,24 +30,22 @@ df['concavity_mean'].fillna(df['concavity_mean'].median(), inplace=True)
 df['concave points_mean'].fillna(df['concave points_mean'].median(), inplace=True)
 
 #escolha de features
-X = df[['radius_mean', 'texture_mean']]
+# Em vez de usar apenas 2 features
+X = df[['radius_mean', 'texture_mean', 'perimeter_mean', 'area_mean',  'smoothness_mean', 'compactness_mean', 'concavity_mean']]
 y = df['diagnosis']
 
 #Separação de treino e teste
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
 
-# ✅ BALANCEAMENTO COM SMOTE APENAS NOS DADOS DE TREINO
-print(f"Antes do SMOTE - Distribuição das classes no treino: {np.bincount(y_train)}")
 
 smote = SMOTE(random_state=42)
 X_train_balanced, y_train_balanced = smote.fit_resample(X_train, y_train)
 
-print(f"Depois do SMOTE - Distribuição das classes no treino: {np.bincount(y_train_balanced)}")
 
 
 #Treianamento do KNN
 knn = KNeighborsClassifier(n_neighbors=11)
-knn.fit(X_train_balanced, y_train_balanced)  # ✅ Usar dados balanceados
+knn.fit(X_train_balanced, y_train_balanced) 
 
 
 #Teste e validação
