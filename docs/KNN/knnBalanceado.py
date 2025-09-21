@@ -46,7 +46,7 @@ print(f"Depois do SMOTE - Distribuição das classes no treino: {np.bincount(y_t
 
 
 #Treianamento do KNN
-knn = KNeighborsClassifier(n_neighbors=3)
+knn = KNeighborsClassifier(n_neighbors=11)
 knn.fit(X_train_balanced, y_train_balanced)  # ✅ Usar dados balanceados
 
 
@@ -93,9 +93,9 @@ scores = cross_val_score(knn, X, y, cv=5)
 print(f"Validação Cruzada: {scores.mean():.3f} ± {scores.std():.3f}")
 
 # 2. Comparar com k maior
-knn_k3 = KNeighborsClassifier(n_neighbors=3)
-knn_k3.fit(X_train, y_train)
-print(f"K=3 Accuracy: {accuracy_score(y_test, knn_k3.predict(X_test)):.3f}")
+knn_k11 = KNeighborsClassifier(n_neighbors=3)
+knn_k11.fit(X_train, y_train)
+print(f"K=3 Accuracy: {accuracy_score(y_test, knn_k11.predict(X_test)):.3f}")
 
 # 3. Matriz de Confusão
 from sklearn.metrics import confusion_matrix
