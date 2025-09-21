@@ -31,7 +31,7 @@ df['concave points_mean'].fillna(df['concave points_mean'].median(), inplace=Tru
 
 #escolha de features
 # Em vez de usar apenas 2 features
-X = df[['radius_mean', 'texture_mean', 'perimeter_mean', 'area_mean',  'smoothness_mean', 'compactness_mean', 'concavity_mean']]
+X = df[['radius_mean', 'texture_mean']]
 y = df['diagnosis']
 
 #Separação de treino e teste
