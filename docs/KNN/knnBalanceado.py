@@ -8,6 +8,8 @@ from sklearn.metrics import accuracy_score
 import seaborn as sns
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
+from imblearn.over_sampling import SMOTE  # ✅ Importar SMOTE
+
 
 
 plt.figure(figsize=(12,10))
@@ -35,9 +37,18 @@ y = df['diagnosis']
 #Separação de treino e teste
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
 
+# ✅ BALANCEAMENTO COM SMOTE APENAS NOS DADOS DE TREINO
+print(f"Antes do SMOTE - Distribuição das classes no treino: {np.bincount(y_train)}")
+
+smote = SMOTE(random_state=42)
+X_train_balanced, y_train_balanced = smote.fit_resample(X_train, y_train)
+
+print(f"Depois do SMOTE - Distribuição das classes no treino: {np.bincount(y_train_balanced)}")
+
+
 #Treianamento do KNN
 knn = KNeighborsClassifier(n_neighbors=3)
-knn.fit(X_train, y_train)
+knn.fit(X_train_balanced, y_train_balanced)  # ✅ Usar dados balanceados
 
 
 #Teste e validação
@@ -65,7 +76,7 @@ plt.contourf(xx, yy, Z, cmap=plt.cm.RdYlGn_r, alpha=0.3)
 sns.scatterplot(x=X.iloc[:, 0], y=X.iloc[:, 1], hue=y_labels, style=y_labels, palette={'Benigno': 'green', 'Maligno': 'red'}, s=100) #motivooooooo do errroo
 plt.xlabel("radius_mean")
 plt.ylabel("texture_mean")
-plt.title("KNN Decision Boundary (k=3) -  Diagnóstico de Câncer")
+plt.title("KNN Decision Boundary (k=3) - Diagnóstico de Câncer (Com Balanceamento SMOTE)")
 plt.legend(title="Diagnóstico")  
 
 
@@ -76,17 +87,4 @@ plt.savefig(buffer, format="svg", transparent=True)
 print(buffer.getvalue())
 
 
-# 1. Validação Cruzada
-from sklearn.model_selection import cross_val_score
-scores = cross_val_score(knn, X, y, cv=5)
-print(f"Validação Cruzada: {scores.mean():.3f} ± {scores.std():.3f}")
 
-# 2. Comparar com k maior
-knn_k11 = KNeighborsClassifier(n_neighbors=3)
-knn_k11.fit(X_train, y_train)
-print(f"K=11 Accuracy: {accuracy_score(y_test, knn_k11.predict(X_test)):.3f}")
-
-# 3. Matriz de Confusão
-from sklearn.metrics import confusion_matrix
-print("Matriz de Confusão:")
-print(confusion_matrix(y_test, predictions))

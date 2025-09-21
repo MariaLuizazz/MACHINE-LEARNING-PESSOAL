@@ -63,6 +63,20 @@ Nódulos malignos costumam ser maiores, com contornos irregulares e não lisos, 
 
 Portanto, as variáveis mais importantes do meu dataset para o diagnóstico seriam aquelas que especificam tamanho, formato e textura do nódulo. No caso, as variáveis escolhidas foram: texture_mean e radius_mean.
 
+ !!!test "TESTE 1 "
+
+ Ao analiser o primeiro gráfico, o modelo paresentou sinais de overfitting, realizando uma validação cruzada e matriz de confusão foi  possível constatar que de acordo com o modelo: 
+
+102: Pacientes saudáveis corretamente diagnosticados
+
+5: Pacientes saudáveis erroneamente diagnosticados com câncer (Falso Positivo)
+
+14: Pacientes com câncer erroneamente diagnosticados como saudáveis (Falso Negativo - GRAVE)
+
+50: Pacientes com câncer corretamente diagnosticados
+
+Com esses erros o gráfico resultou da seguinte forma: 
+
 === "Result"
 
     ```python exec="1" html="1"
@@ -75,7 +89,20 @@ Portanto, as variáveis mais importantes do meu dataset para o diagnóstico seri
     --8<-- "docs/KNN/knn.py"
     ```
 
+!!! test "TESTE 2 "
 
+APLICAÇAÕ Do smote apenas nos dados de treino, sem vazmento de informações para o teste, distribuiçaõ balanceada.
+
+=== "Result"
+
+    ```python exec="1" html="1"
+    --8<-- "docs/KNN/knnBalanceado.py"
+    ```
+
+=== "Code"
+
+    ```python exec="0"
+    --8<-- "docs/KNN/knnBalanceado.py"
 
 # Relatorio final
 

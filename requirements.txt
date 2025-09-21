@@ -19,4 +19,5 @@ scikit-learn
 kagglehub
 tables
 seaborn
+imblearn
 
