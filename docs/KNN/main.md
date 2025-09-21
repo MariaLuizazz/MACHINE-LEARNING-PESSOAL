@@ -63,9 +63,9 @@ Nódulos malignos costumam ser maiores, com contornos irregulares e não lisos, 
 
 Portanto, as variáveis mais importantes do meu dataset para o diagnóstico seriam aquelas que especificam tamanho, formato e textura do nódulo. No caso, as variáveis escolhidas foram: texture_mean e radius_mean.
 
- !!! test "TESTE 1 "
+!!! test "TESTE 1 "
 
- Ao analiser o primeiro gráfico, o modelo paresentou sinais de overfitting, realizando uma validação cruzada e matriz de confusão foi  possível constatar que de acordo com o modelo: 
+ Ao analiser o primeiro gráfico, o modelo paresentou sinais de overfitting, realizando uma validação cruzada e matriz de confusão foi  possível constatar que de acordo com o modelo sem balancemanto e com k = 3 que: 
 
 102: Pacientes saudáveis corretamente diagnosticados
 
@@ -91,7 +91,20 @@ Com esses erros o gráfico resultou da seguinte forma:
 
 !!! test "TESTE 2 "
 
-APLICAÇAÕ Do smote apenas nos dados de treino, sem vazmento de informações para o teste, distribuiçaõ balanceada.
+No teste 2 ocorreu aplicação da técnica smote  apenas nos dados de treino para balanceamento, sem vazmento de informações para o teste.
+Realizando uma validação cruzada e matriz de confusão foi  possível constatar que de acordo com o modelo co balancemento e com k = 11 que: 
+
+O modelo balanceado com K=11 é MAIS SEGURO que a versão anterior, reduzindo os perigosos falsos negativos em 28,6%.
+
+101: Pacientes saudáveis corretamente diagnosticados
+
+6: Pacientes saudáveis erroneamente diagnosticados com câncer (Falso Positivo)
+
+10: Pacientes com câncer erroneamente diagnosticados como saudáveis (Falso Negativo - GRAVE)
+
+54: Pacientes com câncer corretamente diagnosticados
+
+- Conclusão: a quantidade de falsos negativos cairam, e de positivos aumentou.
 
 === "Result"
 
@@ -105,10 +118,10 @@ APLICAÇAÕ Do smote apenas nos dados de treino, sem vazmento de informações p
     --8<-- "docs/KNN/knnBalanceado.py"
     ```
 
-    
+
 # Relatorio final
 
-- O modelo KNN com k=3 memoriza os dados de treino e usa distância para fazer previsões. Para cada novo tumor, ele encontra os 3 tumores mais similares no conjunto de treino e decide pela maioria.
+- O modelo KNN com k=3 memoriza os dados de treino e usa distância para fazer previsões. Para cada novo tumor, ele encontra os 3 tumores mais similares no conjunto de treino e decide pela maioria, a esma coisa ocrre com k = 11.
 
 - Sobre a Avaliação:
 Após a etapa de treino e teste, o processo entregou uma acurácia de 86% que nos mostra que o modelo acerta 86 em cada 100 previsões. 

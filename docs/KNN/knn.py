@@ -36,7 +36,7 @@ y = df['diagnosis']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
 
 #Treianamento do KNN
-knn = KNeighborsClassifier(n_neighbors=11)
+knn = KNeighborsClassifier(n_neighbors=3)
 knn.fit(X_train, y_train)
 
 
@@ -81,10 +81,6 @@ from sklearn.model_selection import cross_val_score
 scores = cross_val_score(knn, X, y, cv=5)
 print(f"Validação Cruzada: {scores.mean():.3f} ± {scores.std():.3f}")
 
-# 2. Comparar com k maior
-knn_k11 = KNeighborsClassifier(n_neighbors=11)
-knn_k11.fit(X_train, y_train)
-print(f"K=3 Accuracy: {accuracy_score(y_test, knn_k11.predict(X_test)):.3f}")
 
 # 3. Matriz de Confusão
 from sklearn.metrics import confusion_matrix
