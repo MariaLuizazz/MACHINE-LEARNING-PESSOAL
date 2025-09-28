@@ -4,6 +4,7 @@ from io import StringIO
 from sklearn.cluster import KMeans
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+from tabulate import tabulate  
 
 plt.figure(figsize=(12, 10))
 
