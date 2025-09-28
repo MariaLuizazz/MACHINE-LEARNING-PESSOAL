@@ -9,7 +9,7 @@ import pandas as pd
 # Importar dados
 df = pd.read_csv('https://raw.githubusercontent.com/MariaLuizazz/MACHINE-LEARNING-PESSOAL/refs/heads/main/dados/breast-cancer.csv')
 
-# Features (remove id e diagnóstico)
+# Features (remover id e diagnóstico)
 X = df.drop(columns=['diagnosis', 'id'])
 
 # Normalização
@@ -32,17 +32,25 @@ plt.figure(figsize=(10, 8))
 plt.scatter(X_pca[:, 0], X_pca[:, 1], c=labels, cmap='viridis', s=50)
 plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1],
             c='red', marker='*', s=200, label='Centróides')
-
 plt.title('Clusters após redução de dimensionalidade (PCA)')
 plt.xlabel('Componente Principal 1')
 plt.ylabel('Componente Principal 2')
 plt.legend()
 plt.show()
 
-# Mostrar variância explicada
-print("Variância explicada por cada componente:", pca.explained_variance_ratio_)
-print("Variância total explicada (2 componentes):", np.sum(pca.explained_variance_ratio_))
+# Criar tabela bonitinha da variância explicada
+variancias = pca.explained_variance_ratio_
+df_variancia = pd.DataFrame({
+    'Componente Principal': [f'PC{i+1}' for i in range(len(variancias))],
+    'Variância Explicada': variancias,
+    'Variância Acumulada': np.cumsum(variancias)
+})
 
+# Exibir tabela em formato Markdown (ótimo para MkDocs)
+print(df_variancia.to_markdown(index=False))
+
+# Variância total explicada
+print("Variância total explicada (2 componentes):", np.sum(variancias))
 
 # Imprimir centros e inércia
 print("Centróides finais:", kmeans.cluster_centers_)
