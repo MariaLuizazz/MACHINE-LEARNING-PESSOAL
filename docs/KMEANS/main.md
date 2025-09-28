@@ -31,21 +31,6 @@ Número de variáveis preditoras: 30 atributos numéricos relacionados ao tamanh
 
 
 
-parte 2
-
-
-
-=== "Result"
-
-    ```python exec="1" html="1"
-    --8<-- "docs/KMEANS/km.py"
-    ```
-
-=== "Code"
-
-    ```python exec="0"
-    --8<-- "docs/KMEANS/km.py"
-    ```
 
 
 
@@ -84,6 +69,7 @@ O objetivo do modelo é identificar **agrupamentos naturais** nos dados de cânc
 - **PC2** explica aproximadamente **18,97%**.  
 - **Variância total explicada pelos 2 componentes:** 63,24%.  
 
+
 > **Interpretação:** Mais da metade da informação original dos dados é preservada nesses dois componentes, permitindo uma visualização e análise de clusters eficaz.
 
 ---
@@ -114,11 +100,21 @@ Os centróides identificados pelo K-Means no espaço reduzido (PCA) são:
 
 ## 5. Gráfico dos Clusters
 
-![Clusters PCA](clusters.png)
-
-> **Nota:** Salve o gráfico gerado pelo Python como `clusters.png` e coloque na mesma pasta do seu MkDocs para exibição.
 
 ---
+
+=== "Result"
+
+    ```python exec="1" html="1"
+    --8<-- "docs/KMEANS/km.py"
+    ```
+
+=== "Code"
+
+    ```python exec="0"
+    --8<-- "docs/KMEANS/km.py"
+    ```
+
 
 ## 6. Conclusão
 
