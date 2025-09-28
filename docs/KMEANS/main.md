@@ -64,3 +64,35 @@ O primeiro componente principal explica ≈44,3% da variância total dos dados.
 O segundo componente principal explica ≈18,97% da variância.
 
 Isso significa que, juntos, os dois componentes capturam ≈63,2% da informação original do dataset.
+
+# Relatório do Modelo: K-Means com PCA
+
+## 1. Descrição do Modelo
+O modelo aplicado combina duas técnicas:
+
+1. **PCA (Análise de Componentes Principais)**: usada para reduzir a dimensionalidade dos dados originais, mantendo a maior parte da variabilidade.  
+2. **K-Means**: algoritmo de clustering que agrupa os dados em 3 clusters distintos com base na proximidade aos centróides.
+
+O objetivo do modelo é identificar **agrupamentos naturais** nos dados de câncer de mama, considerando as características das células.
+
+---
+
+## 2. Variância Explicada pelos Componentes Principais
+
+| Componente Principal | Variância Explicada | Variância Acumulada |
+|---------------------|-------------------|-------------------|
+| PC1                 | 0,44272           | 0,44272           |
+| PC2                 | 0,189712          | 0,632432          |
+
+- **PC1** explica aproximadamente **44,3%** da variância dos dados.  
+- **PC2** explica aproximadamente **18,97%**.  
+- **Variância total explicada pelos 2 componentes:** 63,24%.  
+
+> **Interpretação:** Mais da metade da informação original dos dados é preservada nesses dois componentes, permitindo uma visualização e análise de clusters eficaz.
+
+---
+
+## 3. Centròides Finais dos Clusters
+
+Os centróides identificados pelo K-Means no espaço reduzido (PCA) são:
+
