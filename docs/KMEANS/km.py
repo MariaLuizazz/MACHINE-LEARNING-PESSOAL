@@ -5,11 +5,13 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import pandas as pd
+from tabulate import tabulate  
+
 
 # Importar dados
 df = pd.read_csv('https://raw.githubusercontent.com/MariaLuizazz/MACHINE-LEARNING-PESSOAL/refs/heads/main/dados/breast-cancer.csv')
 
-# Features (remover id e diagnóstico)
+# Features (remove id e diagnóstico)
 X = df.drop(columns=['diagnosis', 'id'])
 
 # Normalização
@@ -32,31 +34,32 @@ plt.figure(figsize=(10, 8))
 plt.scatter(X_pca[:, 0], X_pca[:, 1], c=labels, cmap='viridis', s=50)
 plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1],
             c='red', marker='*', s=200, label='Centróides')
+
 plt.title('Clusters após redução de dimensionalidade (PCA)')
 plt.xlabel('Componente Principal 1')
 plt.ylabel('Componente Principal 2')
 plt.legend()
 plt.show()
 
-# Criar tabela bonitinha da variância explicada
+# Criar tabela de variância explicada
 variancias = pca.explained_variance_ratio_
-df_variancia = pd.DataFrame({
+tabela_variancia = pd.DataFrame({
     'Componente Principal': [f'PC{i+1}' for i in range(len(variancias))],
     'Variância Explicada': variancias,
     'Variância Acumulada': np.cumsum(variancias)
 })
 
-# Exibir tabela em formato Markdown (ótimo para MkDocs)
-print(df_variancia.to_markdown(index=False))
+# Exibir tabela em formato Markdown (perfeito para MkDocs)
+print(tabela_variancia.to_markdown(index=False))
 
-# Variância total explicada
-print("Variância total explicada (2 componentes):", np.sum(variancias))
+# Variância total
+print("\nVariância total explicada (2 componentes):", np.sum(variancias))
 
 # Imprimir centros e inércia
-print("Centróides finais:", kmeans.cluster_centers_)
+print("\nCentróides finais:", kmeans.cluster_centers_)
 print("Inércia (WCSS):", kmeans.inertia_)
 
-# Exibir o enredo
+# Exibir o enredo em SVG
 buffer = StringIO()
 plt.savefig(buffer, format="svg", transparent=True)
 print(buffer.getvalue())
