@@ -30,10 +30,6 @@ Número de variáveis preditoras: 30 atributos numéricos relacionados ao tamanh
 
 
 
-
-
-
-
 Cada ponto azul/roxo/amarelo no gráfico é um paciente representado nessas duas dimensões condensadas.
 
 Esses componentes carregam a maior parte da variabilidade dos dados originais (30 features)
