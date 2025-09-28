@@ -42,3 +42,13 @@ plt.show()
 # Mostrar variância explicada
 print("Variância explicada por cada componente:", pca.explained_variance_ratio_)
 print("Variância total explicada (2 componentes):", np.sum(pca.explained_variance_ratio_))
+
+
+# Imprimir centros e inércia
+print("Centróides finais:", kmeans.cluster_centers_)
+print("Inércia (WCSS):", kmeans.inertia_)
+
+# Exibir o enredo
+buffer = StringIO()
+plt.savefig(buffer, format="svg", transparent=True)
+print(buffer.getvalue())
