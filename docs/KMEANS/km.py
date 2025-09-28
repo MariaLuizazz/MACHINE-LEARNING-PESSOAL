@@ -76,3 +76,14 @@ print("Inércia (WCSS):", kmeans.inertia_)
 buffer = StringIO()
 plt.savefig(buffer, format="svg", transparent=True)
 print(buffer.getvalue())
+
+plt.figure(figsize=(10, 8))
+plt.scatter(X_pca[:, 0], X_pca[:, 1], c=labels, cmap='viridis', s=50)
+plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1],
+            c='red', marker='*', s=200, label='Centróides')
+plt.title('Clusters após redução de dimensionalidade (PCA)')
+plt.xlabel('Componente Principal 1')
+plt.ylabel('Componente Principal 2')
+plt.legend()
+plt.savefig("clusters.png")  # Salvar imagem para MkDocs
+plt.show()

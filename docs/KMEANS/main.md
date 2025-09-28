@@ -47,11 +47,7 @@ parte 2
     --8<-- "docs/KMEANS/km.py"
     ```
 
-=== "Result"
 
-    ```python exec="1" html="1"
-    --8<-- "docs/KMEANS/kmeans.py"
-    ```
 
 Cada ponto azul/roxo/amarelo no gráfico é um paciente representado nessas duas dimensões condensadas.
 
@@ -96,3 +92,41 @@ O objetivo do modelo é identificar **agrupamentos naturais** nos dados de cânc
 
 Os centróides identificados pelo K-Means no espaço reduzido (PCA) são:
 
+[[ 2.67596132 3.31195566] → Cluster 1
+[-2.3259273 -0.20749033] → Cluster 2
+[ 4.90974577 -1.89255356]] → Cluster 3
+
+
+- Cada centróide representa o **“ponto médio”** de cada cluster.  
+- Cada ponto do dataset é atribuído ao cluster cujo centróide está mais próximo.
+
+---
+
+## 4. Inércia (WCSS)
+
+- **Inércia final:** 3871,15  
+- Representa a soma das distâncias quadráticas dos pontos aos seus centróides.  
+- Quanto menor a inércia, mais compactos são os clusters.
+
+> **Interpretação prática:** A dispersão dos clusters é moderada. Para otimizar o número de clusters, pode-se usar o **método do cotovelo**.
+
+---
+
+## 5. Gráfico dos Clusters
+
+![Clusters PCA](clusters.png)
+
+> **Nota:** Salve o gráfico gerado pelo Python como `clusters.png` e coloque na mesma pasta do seu MkDocs para exibição.
+
+---
+
+## 6. Conclusão
+
+- O modelo reduziu os dados para 2 dimensões mantendo **63% da variância**, facilitando visualização.  
+- Foram identificados **3 clusters distintos**, cada um representado por um centróide.  
+- O WCSS sugere que os clusters são relativamente coesos.
+
+
+1. Explorar mais componentes do PCA para capturar mais variabilidade.  
+2. Testar diferentes números de clusters (K) usando o método do cotovelo.  
+3. Investigar quais características impactam mais a separação dos clusters.
