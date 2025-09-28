@@ -23,5 +23,6 @@ kmeans = KMeans(n_clusters=3, init='k-means++', max_iter=100, random_state=42)
 labels = kmeans.fit_predict(X_scaled)
 
 df['Cluster'] = labels
+
 print(df.sample(n=10, random_state=42).to_markdown(index=False))
 

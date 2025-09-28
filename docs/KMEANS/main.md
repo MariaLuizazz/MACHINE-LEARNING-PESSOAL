@@ -4,13 +4,17 @@
     --8<-- "docs/KMEANS/kmeans.py"
     ```
 
+
+
+parte 2
+
+
+
 === "Result"
 
     ```python exec="1" html="1"
-    --8<-- "docs/KMEANS/kmeans.py"
+    --8<-- "docs/KMEANS/km.py"
     ```
-
-parte 2
 
 === "Code"
 
@@ -21,5 +25,5 @@ parte 2
 === "Result"
 
     ```python exec="1" html="1"
-    --8<-- "docs/KMEANS/km.py"
+    --8<-- "docs/KMEANS/kmeans.py"
     ```
