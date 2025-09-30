@@ -41,7 +41,7 @@ comp = completeness_score(y_true, labels)
 vmes = v_measure_score(y_true, labels)
 sil = silhouette_score(X_pca, labels)
 
-print("📊 Métricas KMeans")
+print("Métricas KMeans")
 print(f"ARI:           {ari:.4f}")
 print(f"AMI:           {ami:.4f}")
 print(f"Homogeneidade: {hom:.4f}")
