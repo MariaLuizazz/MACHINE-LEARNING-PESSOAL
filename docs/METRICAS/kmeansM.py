@@ -11,9 +11,7 @@ from sklearn.metrics import (
     silhouette_score
 )
 
-# ==============================
-# Carregamento dos dados
-# ==============================
+
 df = pd.read_csv("https://raw.githubusercontent.com/MariaLuizazz/MACHINE-LEARNING-PESSOAL/refs/heads/main/dados/breast-cancer.csv")
 
 X = df.drop(columns=["diagnosis", "id"])
@@ -49,9 +47,7 @@ print(f"Completude:    {comp:.4f}")
 print(f"V-Measure:     {vmes:.4f}")
 print(f"Silhouette:    {sil:.4f}")
 
-# ==============================
-# Visualização
-# ==============================
+
 plt.figure(figsize=(10, 8))
 plt.scatter(X_pca[:, 0], X_pca[:, 1], c=labels, cmap="viridis", s=50)
 plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1],
