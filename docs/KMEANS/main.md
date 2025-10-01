@@ -96,6 +96,8 @@ Os centróides identificados pelo K-Means no espaço reduzido (PCA) são:
 
 ## 5. Gráfico dos Clusters
 
+| Componente Principal | Variância Explicada | Variância Acumulada | |:-----------------------|----------------------:|----------------------:| | PC1 | 0.44272 | 0.44272 | | PC2 | 0.189712 | 0.632432 | Variância total explicada (2 componentes): 0.6324320765155944 Centróides finais: [[ 2.67596132 3.31195566] [-2.3259273 -0.20749033] [ 4.90974577 -1.89255356]] Inércia (WCSS): 3871.14805593851
+
 
 ---
 

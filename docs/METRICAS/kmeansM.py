@@ -1,59 +1,74 @@
-import numpy as np
 import matplotlib.pyplot as plt
-from io import StringIO
-from sklearn.cluster import KMeans
-from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
+import kagglehub
 import pandas as pd
-from sklearn.metrics import (
-    adjusted_rand_score, adjusted_mutual_info_score,
-    homogeneity_score, completeness_score, v_measure_score,
-    silhouette_score
-)
+from kagglehub import KaggleDatasetAdapter
+from io import StringIO
+from sklearn import tree
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+from sklearn.metrics import accuracy_score, precision_score, f1_score, confusion_matrix
+import seaborn as sns
+import numpy as np
 
 
-df = pd.read_csv("https://raw.githubusercontent.com/MariaLuizazz/MACHINE-LEARNING-PESSOAL/refs/heads/main/dados/breast-cancer.csv")
+plt.figure(figsize=(16, 12))
 
-X = df.drop(columns=["diagnosis", "id"])
-y_true = df["diagnosis"].map({"M": 1, "B": 0})  # ground truth para avaliar
+# Preprocess the data
+def preprocess(df):
+    # Fill missing values
+    df['tax'].fillna(df['tax'].median(), inplace=True)
+    df['mpg'].fillna(df['mpg'].median(), inplace=True)
+    df['price'].fillna(df['price'].median(), inplace=True)
 
-# Normalização
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
+    # Convert categorical variables
+    label_encoder = LabelEncoder()
+    df['transmission'] = label_encoder.fit_transform(df['transmission'])
+    df['fuelType'] = label_encoder.fit_transform(df['fuelType'])
 
-# PCA
-pca = PCA(n_components=2)
-X_pca = pca.fit_transform(X_scaled)
+    # Select features
+    features = ['model', 'year', 'price', 'transmission', 'mileage', 'fuelType', 'tax', 'mpg', 'engineSize']
+    return df[features]
 
-# KMeans
-kmeans = KMeans(n_clusters=2, init="k-means++", max_iter=100, random_state=42)
-labels = kmeans.fit_predict(X_pca)
+# Load the Audi dataset
+df = pd.read_csv('https://raw.githubusercontent.com/EnricoDiGioia/Machine-Learning/refs/heads/main/data/audi.csv')
 
-# ==============================
-# Métricas de avaliação
-# ==============================
-ari = adjusted_rand_score(y_true, labels)
-ami = adjusted_mutual_info_score(y_true, labels)
-hom = homogeneity_score(y_true, labels)
-comp = completeness_score(y_true, labels)
-vmes = v_measure_score(y_true, labels)
-sil = silhouette_score(X_pca, labels)
+# Preprocessing
+df = preprocess(df)
 
-print("Métricas KMeans")
-print(f"ARI:           {ari:.4f}")
-print(f"AMI:           {ami:.4f}")
-print(f"Homogeneidade: {hom:.4f}")
-print(f"Completude:    {comp:.4f}")
-print(f"V-Measure:     {vmes:.4f}")
-print(f"Silhouette:    {sil:.4f}")
+# Display the first few rows of the dataset
+#print(df.sample(n=10, random_state=42).to_markdown(index=False))
+
+# Carregar o conjunto de dados
+x = df[['price', 'tax', 'mpg', 'engineSize', 'mileage', 'year']]
+y = df['fuelType']
+
+# Dividir os dados em conjuntos de treinamento e teste
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.4, random_state=42)
+
+# Criar e treinar o modelo de árvore de decisão
+classifier = tree.DecisionTreeClassifier()
+classifier.fit(x_train, y_train)
+
+# Fazer predições
+y_pred = classifier.predict(x_test)
+
+# Calcular métricas
+accuracy = accuracy_score(y_test, y_pred)
+precision = precision_score(y_test, y_pred, average='weighted')
+f1 = f1_score(y_test, y_pred, average='weighted')
+
+print(f"Accuracy: {accuracy:.4f}")
+print(f"Precision: {precision:.4f}")
+print(f"F1-Score: {f1:.4f}")
+
+# Plotar a árvore de decisão
+plt.figure(figsize=(16, 12))
+tree.plot_tree(classifier, feature_names=['price', 'tax', 'mpg', 'engineSize', 'mileage', 'year'], 
+               class_names=['Diesel', 'Hybrid', 'Petrol'], filled=True, rounded=True)
+plt.title('Árvore de Decisão', fontsize=16, fontweight='bold')
 
 
-plt.figure(figsize=(10, 8))
-plt.scatter(X_pca[:, 0], X_pca[:, 1], c=labels, cmap="viridis", s=50)
-plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1],
-            c="red", marker="*", s=200, label="Centróides")
-plt.title("Clusters após PCA - KMeans")
-plt.xlabel("PC1")
-plt.ylabel("PC2")
-plt.legend()
-plt.show()
+# Para imprimir na página HTML
+buffer = StringIO()
+plt.savefig(buffer, format="svg", bbox_inches='tight')
+print(buffer.getvalue())
