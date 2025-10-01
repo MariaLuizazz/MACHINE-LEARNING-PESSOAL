@@ -45,15 +45,10 @@ tabela_variancia = pd.DataFrame({
     'Variância Acumulada': np.cumsum(variancias)
 })
 
-# Exibir tabela em Markdown (perfeito para MkDocs)
-print(tabela_variancia.to_markdown(index=False))
-
-# Variância total
-print("\nVariância total explicada (2 componentes):", np.sum(variancias))
 
 
-print("\nCentróides finais:", kmeans.cluster_centers_)
-print("Inércia (WCSS):", kmeans.inertia_)
+
+
 
 
 buffer = StringIO()
