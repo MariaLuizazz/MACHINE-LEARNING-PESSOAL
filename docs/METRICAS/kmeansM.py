@@ -1,74 +1,62 @@
-import matplotlib.pyplot as plt
-import kagglehub
-import pandas as pd
-from kagglehub import KaggleDatasetAdapter
-from io import StringIO
-from sklearn import tree
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import accuracy_score, precision_score, f1_score, confusion_matrix
-import seaborn as sns
 import numpy as np
+import matplotlib.pyplot as plt
+from io import StringIO
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+import pandas as pd
 
 
-plt.figure(figsize=(16, 12))
+df = pd.read_csv('https://raw.githubusercontent.com/MariaLuizazz/MACHINE-LEARNING-PESSOAL/refs/heads/main/dados/breast-cancer.csv')
 
-# Preprocess the data
-def preprocess(df):
-    # Fill missing values
-    df['tax'].fillna(df['tax'].median(), inplace=True)
-    df['mpg'].fillna(df['mpg'].median(), inplace=True)
-    df['price'].fillna(df['price'].median(), inplace=True)
-
-    # Convert categorical variables
-    label_encoder = LabelEncoder()
-    df['transmission'] = label_encoder.fit_transform(df['transmission'])
-    df['fuelType'] = label_encoder.fit_transform(df['fuelType'])
-
-    # Select features
-    features = ['model', 'year', 'price', 'transmission', 'mileage', 'fuelType', 'tax', 'mpg', 'engineSize']
-    return df[features]
-
-# Load the Audi dataset
-df = pd.read_csv('https://raw.githubusercontent.com/EnricoDiGioia/Machine-Learning/refs/heads/main/data/audi.csv')
-
-# Preprocessing
-df = preprocess(df)
-
-# Display the first few rows of the dataset
-#print(df.sample(n=10, random_state=42).to_markdown(index=False))
-
-# Carregar o conjunto de dados
-x = df[['price', 'tax', 'mpg', 'engineSize', 'mileage', 'year']]
-y = df['fuelType']
-
-# Dividir os dados em conjuntos de treinamento e teste
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.4, random_state=42)
-
-# Criar e treinar o modelo de árvore de decisão
-classifier = tree.DecisionTreeClassifier()
-classifier.fit(x_train, y_train)
-
-# Fazer predições
-y_pred = classifier.predict(x_test)
-
-# Calcular métricas
-accuracy = accuracy_score(y_test, y_pred)
-precision = precision_score(y_test, y_pred, average='weighted')
-f1 = f1_score(y_test, y_pred, average='weighted')
-
-print(f"Accuracy: {accuracy:.4f}")
-print(f"Precision: {precision:.4f}")
-print(f"F1-Score: {f1:.4f}")
-
-# Plotar a árvore de decisão
-plt.figure(figsize=(16, 12))
-tree.plot_tree(classifier, feature_names=['price', 'tax', 'mpg', 'engineSize', 'mileage', 'year'], 
-               class_names=['Diesel', 'Hybrid', 'Petrol'], filled=True, rounded=True)
-plt.title('Árvore de Decisão', fontsize=16, fontweight='bold')
+# Features
+X = df.drop(columns=['diagnosis', 'id'])
 
 
-# Para imprimir na página HTML
+
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X_scaled)
+
+
+kmeans = KMeans(n_clusters=3, init='k-means++', max_iter=100, random_state=42)
+labels = kmeans.fit_predict(X_pca)
+
+# Adicionar clusters ao dataframe
+df['Cluster'] = labels
+
+plt.figure(figsize=(10, 8))
+plt.scatter(X_pca[:, 0], X_pca[:, 1], c=labels, cmap='viridis', s=50)
+plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1],
+            c='red', marker='*', s=200, label='Centróides')
+plt.title('Clusters após redução de dimensionalidade (PCA)')
+plt.xlabel('Componente Principal 1')
+plt.ylabel('Componente Principal 2')
+plt.legend()
+plt.show()
+
+
+variancias = pca.explained_variance_ratio_
+tabela_variancia = pd.DataFrame({
+    'Componente Principal': [f'PC{i+1}' for i in range(len(variancias))],
+    'Variância Explicada': variancias,
+    'Variância Acumulada': np.cumsum(variancias)
+})
+
+# Exibir tabela em Markdown (perfeito para MkDocs)
+print(tabela_variancia.to_markdown(index=False))
+
+# Variância total
+print("\nVariância total explicada (2 componentes):", np.sum(variancias))
+
+
+print("\nCentróides finais:", kmeans.cluster_centers_)
+print("Inércia (WCSS):", kmeans.inertia_)
+
+
 buffer = StringIO()
-plt.savefig(buffer, format="svg", bbox_inches='tight')
+plt.savefig(buffer, format="svg", transparent=True)
 print(buffer.getvalue())
+
