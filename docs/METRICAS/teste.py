@@ -24,7 +24,7 @@ df['concavity_mean'].fillna(df['concavity_mean'].median(), inplace=True)
 df['concave points_mean'].fillna(df['concave points_mean'].median(), inplace=True)
 
 # Features selecionadas
-X = df[['radius_mean', 'texture_mean', 'perimeter_mean', 'area_mean',  
+X = df[['radius_mean', 'texture_mean', 'perimeter_mean', 'area_mean',
         'smoothness_mean', 'compactness_mean', 'concavity_mean']]
 y = df['diagnosis']
 
@@ -64,14 +64,15 @@ X_scaled_full = scaler_full.fit_transform(X)
 pca_full = PCA(n_components=2)
 X_pca_full = pca_full.fit_transform(X_scaled_full)
 
-kmeans = KMeans(n_clusters=2, init='k-means++', max_iter=100, random_state=42)
+kmeans = KMeans(n_clusters=2, init='k-means++', max_iter=100, random_state=42, n_init=10)
 clusters = kmeans.fit_predict(X_pca_full)
 
 # Mapear clusters para classes reais
 mapping = {}
 for cluster in np.unique(clusters):
     mask = clusters == cluster
-    mapping[cluster] = mode(y[mask], keepdims=False).mode
+    # mode agora precisa de indexação [0] para pegar o valor
+    mapping[cluster] = mode(y[mask], keepdims=True).mode[0]
 
 y_pred_kmeans = [mapping[c] for c in clusters]
 cm_kmeans = confusion_matrix(y, y_pred_kmeans)
