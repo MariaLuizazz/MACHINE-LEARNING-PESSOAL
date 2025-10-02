@@ -72,3 +72,17 @@ Número de variáveis preditoras: 30 atributos numéricos relacionados ao tamanh
 
 # Avaliação dos Modelos
 
+=== "Resultado"
+
+    ```python exec="on" html="0"
+    --8<-- "docs/METRICAS/avaliacao.py"
+    ```
+=== "Code"
+
+    ```python
+    --8<-- "docs/METRICAS/avaliacao.py"
+    ``` 
+
+
+
+# Comparação dos Resultados
