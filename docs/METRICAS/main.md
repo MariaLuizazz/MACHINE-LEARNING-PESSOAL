@@ -55,3 +55,18 @@ Número de variáveis preditoras: 30 atributos numéricos relacionados ao tamanh
     ```python
     --8<-- "docs/METRICAS/kmeansM.py"
     ``` 
+
+    cbq
+    cb
+
+=== "Resultado"
+
+    ```python exec="on" html="0"
+    --8<-- "docs/METRICAS/teste.py"
+    ```
+
+=== "Code"
+
+    ```python
+    --8<-- "docs/METRICAS/teste.py"
+    ``` 
