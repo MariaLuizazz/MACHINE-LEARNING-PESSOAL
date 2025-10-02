@@ -32,11 +32,11 @@ X = df[['radius_mean', 'texture_mean', 'perimeter_mean', 'area_mean',
         'smoothness_mean', 'compactness_mean', 'concavity_mean']]
 y = df['diagnosis']
 
-# ✅ NORMALIZAÇÃO das features (importante para PCA)
+# NORMALIZAÇÃO das features (importante para PCA)
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
-# ✅ REDUÇÃO DE DIMENSIONALIDADE com PCA
+# REDUÇÃO DE DIMENSIONALIDADE com PCA
 pca = PCA(n_components=2)
 X_pca = pca.fit_transform(X_scaled)
 
@@ -64,13 +64,13 @@ print(f"Accuracy: {accuracy_score(y_test, predictions):.2f}")
 labels_map = {0: "Benigno", 1: "Maligno"}
 y_labels = y.map(labels_map)
 
-# ✅ PREPARAÇÃO PARA O GRÁFICO com dados PCA
+# PREPARAÇÃO PARA O GRÁFICO com dados PCA
 h = 0.02
 x_min, x_max = X_pca[:, 0].min() - 1, X_pca[:, 0].max() + 1
 y_min, y_max = X_pca[:, 1].min() - 1, X_pca[:, 1].max() + 1
 xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
 
-# ✅ PREVISÕES na space do PCA (2D)
+# PREVISÕES na space do PCA (2D)
 Z = knn.predict(np.c_[xx.ravel(), yy.ravel()])
 Z = Z.reshape(xx.shape)
 
@@ -92,7 +92,7 @@ buffer = StringIO()
 plt.savefig(buffer, format="svg", transparent=True)
 print(buffer.getvalue())
 
-# ✅ VALIDAÇÃO CRUZADA com dados originais (não PCA)
+# VALIDAÇÃO CRUZADA com dados originais (não PCA)
 # Para validação, usar dados originais para melhor avaliação
 from sklearn.model_selection import cross_val_score
 from sklearn.pipeline import Pipeline

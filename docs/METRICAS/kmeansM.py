@@ -43,4 +43,3 @@ plt.show()
 buffer = StringIO()
 plt.savefig(buffer, format="svg", transparent=True)
 print(buffer.getvalue())
-
