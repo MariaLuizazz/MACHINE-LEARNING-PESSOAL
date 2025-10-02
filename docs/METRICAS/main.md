@@ -29,7 +29,7 @@ Número de variáveis preditoras: 30 atributos numéricos relacionados ao tamanh
 
 === "Resultado"
 
-    ```python exec="on" html="0"
+    ```python exec="on" html="1"
     --8<-- "docs/METRICAS/knnM.py"
     ```
 === "Code"
@@ -46,7 +46,7 @@ Número de variáveis preditoras: 30 atributos numéricos relacionados ao tamanh
 
 === "Resultado"
 
-    ```python exec="on" html="0"
+    ```python exec="on" html="1"
     --8<-- "docs/METRICAS/kmeansM.py"
     ```
 
@@ -56,8 +56,11 @@ Número de variáveis preditoras: 30 atributos numéricos relacionados ao tamanh
     --8<-- "docs/METRICAS/kmeansM.py"
     ``` 
 
-    cbq
-    cb
+
+
+
+
+# Matrizes de Confusão
 
 === "Resultado"
 
@@ -65,8 +68,7 @@ Número de variáveis preditoras: 30 atributos numéricos relacionados ao tamanh
     --8<-- "docs/METRICAS/teste.py"
     ```
 
-=== "Code"
 
-    ```python
-    --8<-- "docs/METRICAS/teste.py"
-    ``` 
+
+# Avaliação dos Modelos
+
