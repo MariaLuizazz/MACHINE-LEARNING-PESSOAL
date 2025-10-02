@@ -38,16 +38,6 @@ plt.legend()
 plt.show()
 
 
-variancias = pca.explained_variance_ratio_
-tabela_variancia = pd.DataFrame({
-    'Componente Principal': [f'PC{i+1}' for i in range(len(variancias))],
-    'Variância Explicada': variancias,
-    'Variância Acumulada': np.cumsum(variancias)
-})
-
-
-
-
 
 
 
