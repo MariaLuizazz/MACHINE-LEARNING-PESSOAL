@@ -5,6 +5,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score
+from io import StringIO
+
 
 # ===========================================
 # Leitura e pré-processamento do dataset
@@ -73,6 +75,10 @@ tree.plot_tree(
 plt.title("🌲 Árvore Individual da Random Forest")
 plt.show()
 
+buffer = StringIO()
+plt.savefig(buffer, format="svg", transparent=True)
+print(buffer.getvalue())
+
 # ===========================================
 # 4️⃣ Plot das 5 primeiras árvores da floresta
 # ===========================================
@@ -89,3 +95,7 @@ for index in range(5):
     axes[index].set_title(f"Árvore {index+1}", fontsize=10)
 plt.tight_layout()
 plt.show()
+
+buffer = StringIO()
+plt.savefig(buffer, format="svg", transparent=True)
+print(buffer.getvalue())
