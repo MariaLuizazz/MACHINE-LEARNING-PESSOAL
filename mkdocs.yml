@@ -140,4 +140,6 @@ nav:
     - KNN: ./KNN/main.md
     - KMEANS: ./KMEANS/main.md
     - METRICAS: ./METRICAS/main.md
+    - RANDOMFOREST: ./RANDOMFOREST/main.md
   - Projeto: ./projeto/main.md
+
