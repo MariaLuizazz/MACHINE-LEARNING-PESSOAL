@@ -49,8 +49,8 @@ importances = pd.DataFrame({
     'Feature': x.columns,
     'Importance': rf.feature_importances_
 }).sort_values(by='Importance', ascending=False)
-print("\n📊 Importância das Features:")
-print(importances.head(10))
+#print("\n📊 Importância das Features:")
+#print(importances.head(10))
 
 
 # Plot de uma árvore individual
