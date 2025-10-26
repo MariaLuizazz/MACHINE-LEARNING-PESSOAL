@@ -52,20 +52,7 @@ importances = pd.DataFrame({
 print("\n📊 Importância das Features:")
 print(importances.head(10))
 
-# Plot de uma árvore individual
-fn = list(x.columns)             # nomes das features
-cn = ['Benigno', 'Maligno']      # classes do diagnóstico
 
-fig, ax = plt.subplots(figsize=(20,10), dpi=150)
-tree.plot_tree(
-    rf.estimators_[0],
-    feature_names=fn,
-    class_names=cn,
-    filled=True,
-    rounded=True,
-    fontsize=8,
-    ax=ax
-)
 
 
 # Plot das 5 primeiras árvores da floresta
@@ -87,10 +74,5 @@ buffer = StringIO()
 plt.savefig(buffer, format="svg", transparent=True)
 print(buffer.getvalue())
 
-plt.title("🌲 Árvore Individual da Random Forest")
-plt.show()
 
-buffer = StringIO()
-plt.savefig(buffer, format="svg", transparent=True)
-print(buffer.getvalue())
 

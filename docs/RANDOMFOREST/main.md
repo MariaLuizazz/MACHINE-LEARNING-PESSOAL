@@ -1,4 +1,4 @@
-=== Modelo de Classificação com Random Forest — Breast Cancer Dataset ===
+** Modelo de Classificação com Random Forest — Breast Cancer Dataset **
 
 === "Random forest"
 
@@ -28,7 +28,7 @@ Benigno (0)
 
 Total de atributos: 30 variáveis numéricas contínuas
 
-📊 Análise descritiva inicial
+** Análise descritiva  **
 
 As variáveis numéricas apresentaram médias e desvios-padrão variados, refletindo diferentes escalas de medição.
 Por exemplo:
@@ -37,14 +37,19 @@ radius_mean, area_mean e perimeter_mean possuem valores mais altos e correlaçã
 
 - Variáveis como concave points_mean e concavity_mean estão fortemente associadas à probabilidade de malignidade.
 
-📈 Visualizações sugeridas
 
-Durante a etapa de exploração, histogramas e boxplots mostraram que os tumores malignos tendem a ter valores mais altos para medidas como área, raio e concavidade, enquanto os benignos exibem distribuições menores e mais uniformes.
 
 
 # Pré-processamento
 
 O pré-processamento envolveu limpeza, codificação e tratamento de valores ausentes.
+
+
+=== "Code"
+
+    ```python
+    --8<-- "docs/RANDOMFOREST/pré.py"
+    ``` 
 
 A coluna id foi removida por não conter informação relevante para o modelo.
 
@@ -69,6 +74,13 @@ O dataset foi dividido em:
 
 30% para teste
 
+=== "Code"
+
+    ```python
+    --8<-- "docs/RANDOMFOREST/divisao.py"
+    ``` 
+
+
 A divisão utilizou o parâmetro stratify=y, garantindo que a proporção de diagnósticos malignos e benignos fosse preservada em ambas as amostras.
 O parâmetro random_state=42 assegurou a reprodutibilidade dos resultados.
 
@@ -78,11 +90,11 @@ O parâmetro random_state=42 assegurou a reprodutibilidade dos resultados.
 O modelo implementado foi o Random Forest Classifier, um ensemble de múltiplas árvores de decisão.
 A configuração utilizada foi a seguinte:
 
-Hiperparâmetro	Valor
-n_estimators	100
-max_depth	5
-max_features	'sqrt'
-random_state	42
+=== "Code"
+
+    ```python
+    --8<-- "docs/RANDOMFOREST/treino.py"
+    ``` 
 
 Essas configurações equilibram precisão e interpretabilidade, evitando sobreajuste (overfitting) e mantendo uma boa capacidade de generalização.
 
@@ -90,9 +102,25 @@ Durante o treinamento, cada árvore foi construída a partir de um subconjunto a
 
 
 # Avaliação do Modelo
-🎯 Métrica principal: Acurácia
-
 ✅ Precisão obtida: 0,9708
+
+=== "Random forest"
+
+    ```python exec="1" html="true"
+    --8<-- "docs/RANDOMFOREST/arvore1.py"
+    ```
+
+=== "Random forest"
+
+    ```python exec="1" html="true"
+    --8<-- "docs/RANDOMFOREST/arvore2.py"
+    ```
+
+=== "Code"
+
+    ```python
+    --8<-- "docs/RANDOMFOREST/avaliacao.py"
+    ``` 
 
 O modelo atingiu 97,08% de acurácia na base de teste, indicando excelente desempenho na classificação entre tumores benignos e malignos.
 
@@ -101,29 +129,27 @@ O modelo atingiu 97,08% de acurácia na base de teste, indicando excelente desem
 A análise da importância das variáveis mostrou que o modelo se baseia fortemente em características geométricas e de textura das células.
 As 10 variáveis mais relevantes foram:
 
-Posição	Feature	Importância
-1	area_worst	0.171
-2	concave points_mean	0.108
-3	concave points_worst	0.103
-4	radius_worst	0.084
-5	peripheral_worst	0.082
-6	peripheral_mean	0.076
-7	area_mean	0.060
-8	concavity_mean	0.057
-9	radius_mean	0.047
-10	concavity_worst	0.029
 
-🔍 Interpretação:
-As variáveis relacionadas a área e concavidade são determinantes para o diagnóstico. Tumores malignos apresentam contornos mais irregulares e áreas maiores — o que justifica o peso elevado dessas variáveis.
-
+| Posição | Variável               | Importância |
+| ------- | ---------------------- | ----------- |
+| 1       | `area_worst`           | 0.171       |
+| 2       | `concave points_mean`  | 0.108       |
+| 3       | `concave points_worst` | 0.103       |
+| 4       | `radius_worst`         | 0.084       |
+| 5       | `peripheral_worst`     | 0.082       |
+| 6       | `peripheral_mean`      | 0.076       |
+| 7       | `area_mean`            | 0.060       |
+| 8       | `concavity_mean`       | 0.057       |
+| 9       | `radius_mean`          | 0.047       |
+| 10      | `concavity_worst`      | 0.029       |
 
 
 
-=== "Code"
 
-    ```python
-    --8<-- "docs/RANDOMFOREST/explo.py"
-    ``` 
+- As variáveis relacionadas a área e concavidade são determinantes para o diagnóstico. Tumores malignos apresentam contornos mais irregulares e áreas maiores — o que justifica o peso elevado dessas variáveis.
+
+
+
 
 # Relatório Final e Considerações
 📋 Conclusões
