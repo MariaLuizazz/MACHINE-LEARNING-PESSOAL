@@ -18,7 +18,7 @@ A base utilizada corresponde ao Breast Cancer Dataset, amplamente utilizado em e
 Cada linha representa uma amostra de tecido mamário, e cada coluna descreve características morfológicas das células, como raio, textura, perímetro, área, concavidade e simetria.
 O objetivo é prever se o diagnóstico é benigno ou maligno.
 
-🔍 Natureza dos dados
+!!! note 🔍 Natureza dos dados
 
 Tipo: dados tabulares
 Total de amostras: 569 registros
@@ -40,9 +40,9 @@ radius_mean, area_mean e perimeter_mean possuem valores mais altos e correlaçã
 
 
 
-# Pré-processamento
 
-O pré-processamento envolveu limpeza, codificação e tratamento de valores ausentes.
+# Pré-processamento
+!!! warning O pré-processamento envolveu limpeza, codificação e tratamento de valores ausentes.
 
 
 === "Code"
