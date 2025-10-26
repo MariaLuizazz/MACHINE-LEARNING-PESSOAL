@@ -86,7 +86,7 @@ O parâmetro random_state=42 assegurou a reprodutibilidade dos resultados.
 
 # Treinamento do  modelo
 
-O modelo implementado foi o Random Forest Classifier, um ensemble de múltiplas árvores de decisão.
+- O modelo implementado foi o Random Forest Classifier, um ensemble de múltiplas árvores de decisão.
 A configuração utilizada foi a seguinte:
 
 === "Code"

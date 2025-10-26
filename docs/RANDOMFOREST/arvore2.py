@@ -59,7 +59,7 @@ cn = ['Benigno', 'Maligno']      # classes do diagnóstico
 
 
 # Plot das 5 primeiras árvores da floresta
-fig, axes = plt.subplots(nrows=1, ncols=5, figsize=(25,5), dpi=150)
+fig, axes = plt.subplots(nrows=1, ncols=4, figsize=(25,5), dpi=150)
 for index in range(5):
     tree.plot_tree(
         rf.estimators_[index],
