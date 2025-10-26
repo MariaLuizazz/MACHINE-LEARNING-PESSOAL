@@ -56,17 +56,17 @@ importances = pd.DataFrame({
 fn = list(x.columns)             # nomes das features
 cn = ['Benigno', 'Maligno']      # classes do diagnóstico
 
-fig, ax = plt.subplots(figsize=(30, 8), dpi=150)  # Mais largo, menos alto
+fig, ax = plt.subplots(figsize=(40, 20), dpi=300)  # Tamanho bem grande
+
 tree.plot_tree(
     rf.estimators_[0],
     feature_names=fn,
     class_names=cn,
     filled=True,
     rounded=True,
-    fontsize=8,
+    fontsize=12,  # Fonte bem maior
     ax=ax
 )
-
 
 plt.title("🌲 Árvore Individual da Random Forest")
 plt.show()
