@@ -53,6 +53,9 @@ print("\n📊 Importância das Features:")
 print(importances.head(10))
 
 
+# Plot de uma árvore individual
+fn = list(x.columns)             # nomes das features
+cn = ['Benigno', 'Maligno']      # classes do diagnóstico
 
 
 # Plot das 5 primeiras árvores da floresta

@@ -1,4 +1,4 @@
-** Modelo de Classificação com Random Forest — Breast Cancer Dataset **
+# Modelo de Classificação com Random Forest — Breast Cancer Dataset 
 
 === "Random forest"
 
@@ -28,7 +28,7 @@ Benigno (0)
 
 Total de atributos: 30 variáveis numéricas contínuas
 
-** Análise descritiva  **
+!!! note "Análise descritiva"
 
 As variáveis numéricas apresentaram médias e desvios-padrão variados, refletindo diferentes escalas de medição.
 Por exemplo:
