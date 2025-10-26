@@ -124,7 +124,8 @@ Durante o treinamento, cada árvore foi construída a partir de um subconjunto a
 
 O modelo atingiu 97,08% de acurácia na base de teste, indicando excelente desempenho na classificação entre tumores benignos e malignos.
 
-📊 Importância das Variáveis
+
+!!! example " 📊 Importância das Variáveis"
 
 A análise da importância das variáveis mostrou que o modelo se baseia fortemente em características geométricas e de textura das células.
 As 10 variáveis mais relevantes foram:
