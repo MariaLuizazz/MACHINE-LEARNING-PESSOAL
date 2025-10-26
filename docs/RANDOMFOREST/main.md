@@ -153,7 +153,7 @@ As 10 variáveis mais relevantes foram:
 
 
 # Relatório Final e Considerações
-📋 Conclusões
+!!! danger  "Conclusões"
 
 O modelo de Random Forest apresentou excelente desempenho, com acurácia de 97%, interpretabilidade satisfatória e estabilidade nos resultados.
 A importância das variáveis reforça a coerência clínica dos dados — características morfológicas das células são realmente indicativas da natureza do tumor.
