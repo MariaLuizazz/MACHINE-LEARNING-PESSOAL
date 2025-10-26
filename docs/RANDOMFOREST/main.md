@@ -1,10 +1,16 @@
-# Modelo de Classificação com Random Forest — Breast Cancer Dataset
+=== Modelo de Classificação com Random Forest — Breast Cancer Dataset ===
 
 === "Random forest"
 
     ```python exec="1" html="true"
     --8<-- "docs/RANDOMFOREST/arvore1.py"
     ```
+
+=== "Code"
+
+    ```python
+    --8<-- "docs/RANDOMFOREST/arvore1.py"
+    ``` 
 
 # Exploração dos Dados
 
