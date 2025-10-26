@@ -8,9 +8,6 @@ from sklearn.metrics import accuracy_score
 from io import StringIO
 
 
-# ===========================================
-# Leitura e pré-processamento do dataset
-# ===========================================
 df = pd.read_csv('https://raw.githubusercontent.com/MariaLuizazz/MACHINE-LEARNING-PESSOAL/refs/heads/main/dados/breast-cancer.csv')
 
 # Remover coluna irrelevante
@@ -33,9 +30,8 @@ x_train, x_test, y_train, y_test = train_test_split(
     x, y, test_size=0.3, random_state=42, stratify=y
 )
 
-# ===========================================
-# 2️⃣ Criação e treino do modelo Random Forest
-# ===========================================
+
+# Criação e treino do modelo Random Forest
 rf = RandomForestClassifier(
     n_estimators=100,
     max_depth=5,
@@ -56,9 +52,7 @@ importances = pd.DataFrame({
 print("\n📊 Importância das Features:")
 print(importances.head(10))
 
-# ===========================================
-# 3️⃣ Plot de uma árvore individual
-# ===========================================
+# Plot de uma árvore individual
 fn = list(x.columns)             # nomes das features
 cn = ['Benigno', 'Maligno']      # classes do diagnóstico
 
@@ -72,16 +66,8 @@ tree.plot_tree(
     fontsize=8,
     ax=ax
 )
-plt.title("🌲 Árvore Individual da Random Forest")
-plt.show()
 
-buffer = StringIO()
-plt.savefig(buffer, format="svg", transparent=True)
-print(buffer.getvalue())
-
-# ===========================================
-# 4️⃣ Plot das 5 primeiras árvores da floresta
-# ===========================================
+# Plot das 5 primeiras árvores da floresta
 fig, axes = plt.subplots(nrows=1, ncols=5, figsize=(25,5), dpi=150)
 for index in range(5):
     tree.plot_tree(
@@ -99,3 +85,11 @@ plt.show()
 buffer = StringIO()
 plt.savefig(buffer, format="svg", transparent=True)
 print(buffer.getvalue())
+
+plt.title("🌲 Árvore Individual da Random Forest")
+plt.show()
+
+buffer = StringIO()
+plt.savefig(buffer, format="svg", transparent=True)
+print(buffer.getvalue())
+
