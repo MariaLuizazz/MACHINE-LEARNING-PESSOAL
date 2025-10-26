@@ -68,11 +68,10 @@ Resultado: base limpa, numérica e pronta para o treino do modelo.
 
 # Divisão dos Dados
 
-O dataset foi dividido em:
+!!! tip "O dataset foi dividido em:"
 
-70% para treino
-
-30% para teste
+- 70% para treino
+- 30% para teste
 
 === "Code"
 
