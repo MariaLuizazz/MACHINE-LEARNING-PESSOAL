@@ -56,7 +56,7 @@ importances = pd.DataFrame({
 fn = list(x.columns)             # nomes das features
 cn = ['Benigno', 'Maligno']      # classes do diagnóstico
 
-fig, ax = plt.subplots(figsize=(50, 4), dpi=150)  # Mais largo, menos alto
+fig, ax = plt.subplots(figsize=(50, 12), dpi=150)  # Mais largo, menos alto
 tree.plot_tree(
     rf.estimators_[0],
     feature_names=fn,
