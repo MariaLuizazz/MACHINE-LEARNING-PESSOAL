@@ -8,7 +8,7 @@
 
 === "Resultado"
 
-    ```python exec="on" html="0"
+    ```python exec="1" html="true"
     --8<-- "docs/RANDOMFOREST/explo.py"
     ```
 === "Code"
