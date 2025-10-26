@@ -56,7 +56,8 @@ importances = pd.DataFrame({
 fn = list(x.columns)             # nomes das features
 cn = ['Benigno', 'Maligno']      # classes do diagnóstico
 
-fig, ax = plt.subplots(figsize=(40, 20), dpi=300)  # Tamanho bem grande
+# Plot de uma árvore individual - MUITO GRANDE
+fig, ax = plt.subplots(figsize=(50, 25), dpi=400)  # TAMANHO MÁXIMO
 
 tree.plot_tree(
     rf.estimators_[0],
@@ -64,9 +65,12 @@ tree.plot_tree(
     class_names=cn,
     filled=True,
     rounded=True,
-    fontsize=12,  # Fonte bem maior
+    fontsize=14,  # Fonte grande para boa legibilidade
     ax=ax
 )
+
+plt.title("🌲 Árvore Individual da Random Forest", fontsize=20, pad=20)
+plt.tight_layout()
 
 plt.title("🌲 Árvore Individual da Random Forest")
 plt.show()
