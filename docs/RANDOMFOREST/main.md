@@ -1,5 +1,11 @@
 # Modelo de Classificação com Random Forest — Breast Cancer Dataset
 
+=== "Random forest"
+
+    ```python exec="1" html="true"
+    --8<-- "docs/RANDOMFOREST/arvore1.py"
+    ```
+
 # Exploração dos Dados
 
 A base utilizada corresponde ao Breast Cancer Dataset, amplamente utilizado em estudos de Machine Learning para diagnóstico de câncer de mama.
@@ -105,17 +111,8 @@ Posição	Feature	Importância
 As variáveis relacionadas a área e concavidade são determinantes para o diagnóstico. Tumores malignos apresentam contornos mais irregulares e áreas maiores — o que justifica o peso elevado dessas variáveis.
 
 
-=== "Random forest"
 
-    ```python exec="1" html="true"
-    --8<-- "docs/RANDOMFOREST/explo.py"
-    ```
 
-=== "Resultado"
-
-    ```python exec="1" html="true"
-    --8<-- "docs/RANDOMFOREST/explo.py"
-    ```
 === "Code"
 
     ```python
@@ -128,12 +125,3 @@ As variáveis relacionadas a área e concavidade são determinantes para o diagn
 O modelo de Random Forest apresentou excelente desempenho, com acurácia de 97%, interpretabilidade satisfatória e estabilidade nos resultados.
 A importância das variáveis reforça a coerência clínica dos dados — características morfológicas das células são realmente indicativas da natureza do tumor.
 
-💭 Possíveis melhorias
-
-Ajuste de hiperparâmetros com GridSearchCV para buscar a combinação ótima de profundidade e número de árvores.
-
-Inclusão de métricas adicionais (precisão, recall, F1-score e matriz de confusão) para análise mais detalhada do desempenho.
-
-Aplicação de validação cruzada (cross-validation) para aumentar a confiabilidade dos resultados.
-
-Criação de uma interface visual no dashboard (via MkDocs ou Flask) exibindo as árvores e a curva ROC para fins explicativos.

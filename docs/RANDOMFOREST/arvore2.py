@@ -67,6 +67,7 @@ tree.plot_tree(
     ax=ax
 )
 
+
 # Plot das 5 primeiras árvores da floresta
 fig, axes = plt.subplots(nrows=1, ncols=5, figsize=(25,5), dpi=150)
 for index in range(5):
