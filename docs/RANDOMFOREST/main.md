@@ -101,7 +101,6 @@ Durante o treinamento, cada árvore foi construída a partir de um subconjunto a
 
 
 # Avaliação do Modelo
-✅ Precisão obtida: 0,9708
 
 === "Random forest CONJUNTO"
 
