@@ -143,5 +143,6 @@ nav:
     - RANDOM FOREST: ./RANDOMFOREST/main.md
     - PAGE RANK: ./PAGERANK/main.md
     - PYSPARK: ./PYSPARK/main.md
+    - SVM: ./svm/main.md
   - Projeto: ./projeto/main.md
 
