@@ -136,10 +136,12 @@ extra_javascript:
 nav:
   - Home: index.md
   - ATIVIDADES:
-    - ÁRVORE DE DECISÃO: ./EXERCICIOAD/main.md
+    - ÁRVORE DE DECISÃO: ./ARVORÉ DE DECISÃO/main.md
     - KNN: ./KNN/main.md
     - KMEANS: ./KMEANS/main.md
     - METRICAS: ./METRICAS/main.md
     - RANDOM FOREST: ./RANDOMFOREST/main.md
+    - PAGE RANK: ./Page Rank/main.md
+    - PY SPARK: ./Py Spark/main.md
   - Projeto: ./projeto/main.md
 
