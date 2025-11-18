@@ -1,6 +1,6 @@
 site_name: Entrega Exercicios 
 site_author: MARIA LUIZA
-site_url: https://MariaLuizazz.github.io/MACHINE-LEARNING-PESSOAL
+site_url: https://MariaLuizazz.github.io/MACHINE-LEARNING
 repo_url: https://github.com/MariaLuizazz/MACHINE-LEARNING-PESSOAL
 repo_name: APRENDIZAGEM DE MÁQUINA PESSOAL
 theme:
@@ -136,12 +136,12 @@ extra_javascript:
 nav:
   - Home: index.md
   - ATIVIDADES:
-    - ÁRVORE DE DECISÃO: ./ARVORÉDEDECISÃO/main.md
+    - ÁRVORE DE DECISÃO: ./ARVOREDEDECISÃO/main.md
     - KNN: ./KNN/main.md
     - KMEANS: ./KMEANS/main.md
     - METRICAS: ./METRICAS/main.md
     - RANDOM FOREST: ./RANDOMFOREST/main.md
     - PAGE RANK: ./PageRank/main.md
-    - PY SPARK: ./PySpark/main.md
+    - PYSPARK: ./PySpark/main.md
   - Projeto: ./projeto/main.md
 
