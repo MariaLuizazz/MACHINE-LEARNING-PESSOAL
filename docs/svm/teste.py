@@ -15,8 +15,6 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 url = 'https://raw.githubusercontent.com/MariaLuizazz/MACHINE-LEARNING-PESSOAL/refs/heads/main/dados/breast-cancer.csv'
 df = pd.read_csv(url)
 
-# Exibir amostra rápida (opcional)
-print(df.sample(n=6, random_state=42).to_markdown(index=False))
 
 # Remover coluna irrelevante
 if 'id' in df.columns:
