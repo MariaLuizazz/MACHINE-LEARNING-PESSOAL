@@ -68,8 +68,8 @@ for k, ax in kernels.items():
         svm,
         X_pca,
         response_method="predict",
-        alpha=0.6,
-        cmap="viridis",
+        alpha=0.8,
+        cmap="plasma",
         ax=ax
     )
 
