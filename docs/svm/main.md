@@ -3,8 +3,14 @@ teste
 # exploraçaõ e tudip mais
 
 
-=== "Random forest"
+=== "SVM"
 
     ```python exec="1" html="true"
     --8<-- "docs/svm/Explo.py"
     ```
+
+=== "Code"
+
+    ```python
+    --8<-- "docs/svm/Explo.py"
+    ``` 
