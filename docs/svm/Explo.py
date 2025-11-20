@@ -39,7 +39,6 @@ x_train, x_test, y_train, y_test = train_test_split(
 )
 
 
-
 # PCA treinado APENAS no conjunto de treino
 pca = PCA(n_components=2)
 x_train_pca = pca.fit_transform(x_train)
