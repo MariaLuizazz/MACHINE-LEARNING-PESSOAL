@@ -37,15 +37,3 @@ teste
     ``` 
 
 
-# teste 2
-=== "SVM"
-
-    ```python exec="1" html="true"
-    --8<-- "docs/svm/teste.py"
-    ```
-
-=== "Code"
-
-    ```python
-    --8<-- "docs/svm/teste.py"
-    ``` 
