@@ -18,12 +18,12 @@ Número de variáveis preditoras: 30 atributos numéricos relacionados ao tamanh
 === "Code"
 
     ```python
-    --8<-- "docs/EXERCICIOAD/Exploracaodedados.py"
+    --8<-- "docs/decision-tree/Exploracaodedados.py"
     ``` 
 === "Resultado"
 
     ```python exec="on" html="0"
-    --8<-- "docs/EXERCICIOAD/Exploracaodedados.py"
+    --8<-- "docs/decision-tree/Exploracaodedados.py"
     ```
 
 

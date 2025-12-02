@@ -6,13 +6,13 @@ teste
 === "SVM"
 
     ```python exec="1" html="true"
-    --8<-- "docs/svm/Explo.py"
+    --8<-- "docs/svm/svm.py"
     ```
 
 === "Code"
 
     ```python
-    --8<-- "docs/svm/Explo.py"
+    --8<-- "docs/svm/svm.py"
     ``` 
 
 === "SVM"

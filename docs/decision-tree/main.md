@@ -18,12 +18,12 @@ Número de variáveis preditoras: 30 atributos numéricos relacionados ao tamanh
 === "Code"
 
     ```python
-    --8<-- "docs/EXERCICIOAD/Exploracaodedados.py"
+    --8<-- "docs/decision-tree/Exploracaodedados.py"
     ``` 
 === "Resultado"
 
     ```python exec="on" html="0"
-    --8<-- "docs/EXERCICIOAD/Exploracaodedados.py"
+    --8<-- "docs/decision-tree/Exploracaodedados.py"
     ```
 
 # Pré-Processamento
@@ -41,12 +41,12 @@ Codificação de variáveis categóricas – A variável alvo diagnosis foi tran
 === "Code"
 
     ```python
-    --8<-- "docs/EXERCICIOAD/Preprocessamento.py"
+    --8<-- "docs/decision-tree/Preprocessamento.py"
     ``` 
 === "Resultado"
 
     ```python exec="on" html="0"
-    --8<-- "docs/EXERCICIOAD/Treinamentodomodelo.py"
+    --8<-- "docs/decision-tree/Treinamentodomodelo.py"
     ```
 
 # Divisão de Dados
@@ -64,7 +64,7 @@ Essa variação foi realizada para observar como a quantidade de dados de treino
 === "Code"
 
     ```python
-    --8<-- "docs/EXERCICIOAD/Divisaodedados.py"
+    --8<-- "docs/decision-tree/Divisaodedados.py"
     ``` 
 
 # Treinamento do modelo
@@ -90,7 +90,7 @@ Os resultados mostram que pequenas variações na divisão dos dados afetam a ac
 === "Code"
 
     ```python
-    --8<-- "docs/EXERCICIOAD/Treinamentodomodelo.py"
+    --8<-- "docs/decision-tree/Treinamentodomodelo.py"
     ``` 
 
 
@@ -122,14 +122,14 @@ O modelo final com 90% de acurácia foi escolhido por representar o melhor equil
 === "decision tree"
 
     ```python exec="1" html="true"
-    --8<-- "docs/EXERCICIOAD/Avaliacaodomodelo.py"
+    --8<-- "docs/decision-tree/Avaliacaodomodelo.py"
     ```
 
 
 === "code"
 
     ```python exec="0"
-    --8<-- "docs/EXERCICIOAD/Avaliacaodomodelo.py"
+    --8<-- "docs/decision-tree/Avaliacaodomodelo.py"
     ```
 ---
 
