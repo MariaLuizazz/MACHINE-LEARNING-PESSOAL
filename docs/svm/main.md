@@ -3,17 +3,45 @@ teste
 # exploraçaõ e tudip mais
 
 
+=== "Code"
+
+    ```python
+    --8<-- "docs/decision-tree/Exploracaodedados.py"
+    ``` 
+=== "Resultado"
+
+    ```python exec="on" html="0"
+    --8<-- "docs/decision-tree/Exploracaodedados.py"
+    ```
+
+
+
+# pré - processamento
+
+
+=== "Code"
+
+    ```python
+    --8<-- "docs/decision-tree/Preprocessamento.py"
+    ``` 
+=== "Resultado"
+
+    ```python exec="on" html="0"
+    --8<-- "docs/decision-tree/Preprocessamento.py"
+
+
 === "SVM"
 
     ```python exec="1" html="true"
-    --8<-- "docs/svm/svm.py"
+    --8<-- "docs/svm/explo.py"
     ```
 
 === "Code"
 
     ```python
-    --8<-- "docs/svm/svm.py"
+    --8<-- "docs/svm/explo.py"
     ``` 
+
 
 === "SVM"
 
