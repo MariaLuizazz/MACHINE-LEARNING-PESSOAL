@@ -1,18 +1,13 @@
 teste
 
-# exploraçaõ e tudip mais
+# Exploração dos dados
 
-
-=== "Code"
-
-    ```python
-    --8<-- "docs/decision-tree/Exploracaodedados.py"
-    ``` 
 === "Resultado"
 
     ```python exec="on" html="0"
     --8<-- "docs/decision-tree/Exploracaodedados.py"
     ```
+
 
 
 
@@ -28,7 +23,11 @@ teste
 
     ```python exec="on" html="0"
     --8<-- "docs/decision-tree/Preprocessamento.py"
+    ```
 
+
+
+# jkbvqkcqv
 
 === "SVM"
 
