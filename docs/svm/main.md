@@ -19,11 +19,6 @@ teste
     ```python
     --8<-- "docs/decision-tree/Preprocessamento.py"
     ``` 
-=== "Resultado"
-
-    ```python exec="on" html="0"
-    --8<-- "docs/decision-tree/Preprocessamento.py"
-    ```
 
 
 
