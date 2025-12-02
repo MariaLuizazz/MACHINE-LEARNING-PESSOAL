@@ -68,7 +68,7 @@ for k, ax in kernels.items():
         X_pca,
         response_method="predict",
         alpha=0.8,
-        cmap="viridis",
+        cmap="plasma",
         ax=ax
     )
 

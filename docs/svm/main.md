@@ -36,6 +36,7 @@ teste
     --8<-- "docs/svm/explo.py"
     ``` 
 
+
 # teste 2
 === "SVM"
 
