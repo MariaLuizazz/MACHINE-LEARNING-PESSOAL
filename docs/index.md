@@ -1,9 +1,14 @@
 # Template de Entrega - Machine Learning
 
 
-???+ info inline end "Edição"
+---
+??? info "Informações da Turma"
+    - Curso: Ciência de Dados
+    - Disciplina: Machine Learning
+    - Semestre: 4º Semestre — 2025.2
+    - Professor: Humberto Sandmann
 
-    2025.1
+---
 
 
 ## Template Pessoal
@@ -19,7 +24,7 @@
 ## Entregas
 
 - [x] Árvore de decisão - Data 29/08/2025
-- [ ] KNN - Data 16/09/2025
+- [X] KNN - Data 16/09/2025
 - [ ] Roteiro 3
 - [ ] Roteiro 4
 - [ ] Projeto

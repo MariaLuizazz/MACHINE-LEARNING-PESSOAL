@@ -1,21 +1,4 @@
-teste
 
-
-# jkbvqkcqv
-
-=== "SVM"
-
-    ```python exec="1" html="true"
-    --8<-- "docs/svm/explo.py"
-    ```
-
-=== "Code"
-
-    ```python
-    --8<-- "docs/svm/explo.py"
-    ``` 
-
-    
 # Exploração dos dados
 
 === "Resultado"
@@ -38,5 +21,19 @@ teste
 
 
 
+# moedelo
 
+=== "decision tree"
+
+    ```python exec="1" html="true"
+    --8<-- "docs/svm/teste.py"
+    ```
+
+
+=== "code"
+
+    ```python exec="0"
+    --8<-- "docs/svm/teste.py"
+    ```
+---
 
