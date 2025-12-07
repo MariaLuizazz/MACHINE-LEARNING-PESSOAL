@@ -23,17 +23,17 @@
 
 # moedelo
 
-=== "decision tree"
+=== "svm"
 
     ```python exec="1" html="true"
-    --8<-- "docs/svm/teste.py"
+    --8<-- "docs/svm/explo.py"
     ```
 
 
 === "code"
 
     ```python exec="0"
-    --8<-- "docs/svm/teste.py"
+    --8<-- "docs/svm/explo.py"
     ```
 ---
 
