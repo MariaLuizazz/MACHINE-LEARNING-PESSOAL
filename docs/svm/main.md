@@ -55,8 +55,8 @@ O parâmetro random_state=42 apenas fixa a semente aleatória, garantindo que a 
 ```python
 # Divisão treino/teste
 x_train, x_test, y_train, y_test = train_test_split(
-    x, y, test_size=0.3, random_state=42, stratify=y
-)
+    x, y, test_size=0.3, random_state=42, stratify=y)
+    
 ```
 
 ### Aplicação do PCA :
