@@ -40,7 +40,7 @@ Codificação de variáveis categóricas – A variável alvo diagnosis foi tran
 
 
 
-# Divisão de Dados e Treinamneto do Modelo.
+# Divisão de Dados e Treinamneto do Modelo(SVM + PCA)
 
 Divisão dos dados em treino e teste
 
@@ -87,6 +87,7 @@ x_test_pca = pca.transform(x_test)
 
 ```
 # Avaliação do Modelo
+
 | Kernel   | Acurácia |
 |----------|----------|
 | linear   | 0.9240   |
@@ -94,35 +95,45 @@ x_test_pca = pca.transform(x_test)
 | poly     | 0.8480   |
 | rbf      | 0.9123   |
 
+
+### Representação
+
 ![alt text](image.png)
 
 - Foram avaliadas quatro variantes do SVM, cada uma utilizando um kernel diferente: linear, sigmoid, polynomial (poly) e rbf.
 
-1. Kernel linear apresentou a melhor acurácia (0.9240).
-Isso indica que a separação entre as classes do problema é essencialmente linear após a transformação via PCA. Em outras palavras, os dois componentes principais já organizam os dados de forma que uma fronteira linear é suficiente para discriminar benigno vs maligno com alta precisão.
+1. Kernel Linear (0.9240) — Melhor desempenho
+A alta acurácia indica que, após o PCA, os dados tornam-se essencialmente separáveis por uma fronteira linear. Isso sugere que a estrutura do problema é relativamente simples no espaço reduzido.
 
-2. Kernel rbf ficou muito próximo (0.9123).
-O RBF é mais flexível e captura relações não lineares, mas sua vantagem não se manifesta aqui. Isso reforça a ideia de que o espaço reduzido pelo PCA já tem separação relativamente simples. Ainda assim, o desempenho está consistente e estável.
+2. Kernel RBF (0.9123) — Segundo melhor
+Mesmo sendo mais flexível, o RBF não superou o kernel linear, mostrando que a complexidade extra não traz ganho real neste cenário.
 
-3. Kernel sigmoid teve desempenho intermediário (0.8889).
-O sigmoid tende a ser instável e sensível a parâmetros; não é um kernel amplamente recomendado para classificação prática. A menor acurácia indica que ele não modela bem a estrutura dos dados após a redução dimensional.
+3. Kernel Sigmoid (0.8889) — Desempenho intermediário
+O kernel sigmoid tende a ser menos estável e frequentemente oferece resultados inferiores em comparação a kernels mais robustos.
 
-4. Kernel poly foi o pior (0.8480).
-O kernel polinomial pode criar fronteiras excessivamente complexas ou rígidas dependendo do grau padrão (degree=3). O desempenho mais baixo sugere que essa complexidade não representa bem a distribuição dos dados, gerando fronteiras que não generalizam tão bem no conjunto de teste.
+4. Kernel Poly (0.8480) — Pior desempenho
+A fronteira polinomial acaba gerando uma complexidade que não reflete bem a estrutura dos dados, prejudicando a generalização.
 
 
 
 # Relatório Final
 
-Conclusão técnica
+Os experimentos mostraram que:
 
-Os resultados mostram que o kernel linear é o mais adequado para este problema quando os dados são reduzidos a duas dimensões via PCA.
-A separabilidade linear implica que:
+O PCA cumpriu sua função ao comprimir a variância dos 30 atributos para duas dimensões, permitindo uma separação clara entre as classes.
 
-- o PCA conseguiu capturar a maior parte da variabilidade relevante,
+O SVM com kernel linear mostrou-se o mais adequado para o problema, fornecendo a melhor acurácia e generalização.
 
-- as classes ficam relativamente bem separadas nesse novo espaço,
+Kernels mais complexos, como RBF e Poly, não superaram o modelo linear, reforçando que a separação dos dados no espaço PCA é simples.
 
-- e um modelo mais simples (linear) generaliza melhor do que kernels mais flexíveis.
+### Possíveis Melhorias:
 
-Isso é desejável em termos práticos, pois modelos lineares são mais interpretáveis, mais rápidos e menos suscetíveis a sobreajuste nesse cenário.
+- Avaliação de SVM sem PCA, para comparar o impacto da redução dimensional.
+
+- Aplicação de normalização (StandardScaler) antes do PCA e do SVM.
+
+- Ajuste de hiperparâmetros via GridSearchCV.
+
+- Teste de outras métricas além da acurácia: F1-score, recall, matriz de confusão.
+
+- Uso de métodos mais robustos a ruído, como Random Forest ou Gradient Boosting.
