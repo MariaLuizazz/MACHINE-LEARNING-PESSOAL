@@ -1,5 +1,19 @@
 
 # Exploração dos dados
+!! example "Descrição da base de dados e código de exploração"
+
+O câncer de mama é o tipo de câncer mais comum entre mulheres em todo o mundo, responsável por aproximadamente 25% de todos os casos e afetando milhões de pessoas todos os anos. Ele se desenvolve quando células da mama começam a crescer de forma descontrolada, formando tumores que podem ser identificados por exames de imagem (raios-X) ou detectados como nódulos.
+
+O principal desafio no diagnóstico é diferenciar corretamente os tumores malignos (cancerosos) dos benignos (não cancerosos). O objetivo deste projeto é desenvolver um modelo de classificação supervisionada capaz de prever, com base em atributos numéricos das células, se um tumor é maligno ou benigno.
+
+!!! tip "Sobre o Dataset"
+
+Total de registros: 569 amostras
+
+Variável alvo: diagnosis (M = maligno, B = benigno)
+
+Número de variáveis preditoras: 30 atributos numéricos relacionados ao tamanho, textura, formato e concavidade das células.
+
 
 === "Resultado"
 
@@ -8,10 +22,15 @@
     ```
 
 
-
-
 # pré - processamento
 
+Antes do treinamento do modelo, foi realizado um pré-processamento para garantir a qualidade e consistência dos dados:
+
+Remoção de colunas irrelevantes – A coluna id foi descartada, pois não contribui para o aprendizado do modelo.
+
+Tratamento de valores ausentes – Foram encontrados valores faltantes em algumas variáveis (concavity_worst e concave points_worst). Esses valores foram preenchidos utilizando a mediana, por ser uma técnica robusta contra outliers.
+
+Codificação de variáveis categóricas – A variável alvo diagnosis foi transformada em valores numéricos por meio de Label Encoding (M = 1, B = 0), permitindo sua utilização pelo algoritmo de aprendizado.
 
 === "Code"
 
@@ -21,7 +40,25 @@
 
 
 
-# moedelo
+# Divisão de Dados e Treinamneto do Modelo.
+
+
+```python
+# Divisão treino/teste
+x_train, x_test, y_train, y_test = train_test_split(
+    x, y, test_size=0.3, random_state=42, stratify=y
+)
+
+# PCA treinado APENAS no conjunto de treino
+pca = PCA(n_components=2)
+x_train_pca = pca.fit_transform(x_train)
+x_test_pca = pca.transform(x_test)
+
+# Para os gráficos, podemos usar TODOS os dados convertidos para 2D
+X_pca = pca.transform(x)
+
+```
+# Avaliação do Modelo
 
 === "svm"
 
@@ -36,4 +73,6 @@
     --8<-- "docs/svm/explo.py"
     ```
 ---
+
+# Relatório Final
 

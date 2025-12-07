@@ -37,7 +37,6 @@ x_train, x_test, y_train, y_test = train_test_split(
     x, y, test_size=0.3, random_state=42, stratify=y
 )
 
-
 # PCA treinado APENAS no conjunto de treino
 pca = PCA(n_components=2)
 x_train_pca = pca.fit_transform(x_train)
@@ -68,7 +67,7 @@ for k, ax in kernels.items():
         X_pca,
         response_method="predict",
         alpha=0.8,
-        cmap="plasma",
+        cmap="Pastel1",
         ax=ax
     )
 
