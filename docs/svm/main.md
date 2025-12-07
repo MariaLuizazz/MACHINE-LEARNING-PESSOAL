@@ -22,7 +22,7 @@ Número de variáveis preditoras: 30 atributos numéricos relacionados ao tamanh
     ```
 
 
-# pré - processamento
+# Pré - processamento
 
 Antes do treinamento do modelo, foi realizado um pré-processamento para garantir a qualidade e consistência dos dados:
 
@@ -42,7 +42,6 @@ Codificação de variáveis categóricas – A variável alvo diagnosis foi tran
 
 # Divisão de Dados e Treinamneto do Modelo(SVM + PCA)
 
-Divisão dos dados em treino e teste
 
 O código separa o conjunto de dados em dois grupos:
 um para treinar o modelo (x_train, y_train) e outro para avaliar seu desempenho (x_test, y_test).
@@ -60,18 +59,11 @@ x_train, x_test, y_train, y_test = train_test_split(
 )
 ```
 
-### Aplicação do PCA somente no conjunto de treino
+### Aplicação do PCA :
 
 O PCA (Principal Component Analysis) reduz a dimensionalidade dos dados de entrada para 2 componentes principais.
-Essa redução serve para:
 
-evitar sobreajuste
-
-acelerar o treinamento
-
-permitir visualização dos dados em 2D
-
-O ponto crítico aqui é que o PCA é ajustado apenas no conjunto de treino, usando: x_train_pca = pca.fit_transform(x_train)
+Aqui é que o PCA é ajustado apenas no conjunto de treino, usando: x_train_pca = pca.fit_transform(x_train)
 
 Isso significa que o PCA aprende sua transformação apenas com os dados que o modelo pode ver durante o treinamento — evitando vazamento de informação do teste.
 
@@ -96,7 +88,7 @@ x_test_pca = pca.transform(x_test)
 | rbf      | 0.9123   |
 
 
-### Representação
+### Representação :
 
 ![alt text](image.png)
 
@@ -118,7 +110,7 @@ A fronteira polinomial acaba gerando uma complexidade que não reflete bem a est
 
 # Relatório Final
 
-Os experimentos mostraram que:
+## Os experimentos mostraram que:
 
 O PCA cumpriu sua função ao comprimir a variância dos 30 atributos para duas dimensões, permitindo uma separação clara entre as classes.
 
