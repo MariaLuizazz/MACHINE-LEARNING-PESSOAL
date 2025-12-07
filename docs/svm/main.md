@@ -1,6 +1,6 @@
 
 # Exploração dos dados
-!! example "Descrição da base de dados e código de exploração"
+!!! example "Descrição da base de dados e código de exploração"
 
 O câncer de mama é o tipo de câncer mais comum entre mulheres em todo o mundo, responsável por aproximadamente 25% de todos os casos e afetando milhões de pessoas todos os anos. Ele se desenvolve quando células da mama começam a crescer de forma descontrolada, formando tumores que podem ser identificados por exames de imagem (raios-X) ou detectados como nódulos.
 
@@ -59,6 +59,8 @@ X_pca = pca.transform(x)
 
 ```
 # Avaliação do Modelo
+![alt text](image.png)
+
 
 === "svm"
 
