@@ -1,8 +1,8 @@
 # Machine Learning Project Template
 
-- Este repositório fornece uma estrutura completa para desenvolver projetos de ciência de dados e machine learning, com foco em reprodutibilidade, organização de código, boas práticas e documentação.
+**Este repositório fornece uma estrutura completa para desenvolver projetos de ciência de dados e machine learning, com foco em reprodutibilidade, organização de código, boas práticas e documentação.**
 
-# 🧠 Comparação de Algoritmos de Machine Learning — Câncer de Mama
+- Comparação de Algoritmos de Machine Learning 
 
 Este projeto tem como objetivo **comparar o desempenho de diferentes algoritmos de Machine Learning** aplicados a um mesmo problema de classificação: a previsão de câncer de mama a partir de dados clínicos.
 
@@ -10,31 +10,58 @@ Todos os modelos utilizam **a mesma base de dados do Kaggle**, garantindo que a 
 
 ---
 
-## 🎯 Objetivo do Projeto
+## Objetivo do Projeto
 
 O principal objetivo é:
 
-* Avaliar como diferentes algoritmos se comportam no mesmo dataset
+* Avaliar como diferentes algoritmos se comportam no mesmo dataset.
 * Comparar métricas de desempenho como *accuracy, precision, recall, F1-score*, etc.
 * Entender os pontos fortes e fracos de cada abordagem
 * Criar uma base sólida de estudo sobre **modelos de classificação supervisionada**
 
-Este projeto tem caráter **educacional e experimental**, mas segue uma estrutura organizada e replicável, semelhante ao que é feito em projetos reais de ciência de dados.
+---
+
+# Dataset: Breast Cancer
+
+## 1. Contextualização do Problema
+
+O câncer de mama é uma das doenças oncológicas mais comuns no mundo e representa um **importante problema de saúde pública**, tanto em países desenvolvidos quanto em países em desenvolvimento. De acordo com organizações internacionais de saúde, trata-se de uma das principais causas de mortalidade por câncer entre mulheres, embora também possa ocorrer, em menor frequência, em homens.
+
+A detecção precoce do câncer de mama é um fator determinante para o aumento das chances de sucesso no tratamento e para a redução da taxa de mortalidade. Nesse contexto, exames clínicos, de imagem e análises laboratoriais produzem uma grande quantidade de dados que podem ser utilizados para **auxiliar o processo de diagnóstico médico**.
+
+Com o avanço da Ciência de Dados e do Machine Learning, tornou-se cada vez mais relevante o uso de **modelos computacionais capazes de identificar padrões em dados clínicos** e apoiar especialistas na tomada de decisão. Embora esses modelos não substituam o diagnóstico médico, eles podem atuar como ferramentas de suporte, aumentando a eficiência, a consistência e a confiabilidade das análises.
 
 ---
 
-## 🗂️ Dataset
+## 2. Justificativa da Escolha do Dataset
 
-O dataset utilizado é o **Breast Cancer Dataset** disponível no Kaggle, contendo:
+O **Breast Cancer Dataset**, disponibilizado publicamente na plataforma Kaggle, foi escolhido para este projeto por diversas razões:
 
-* Features numéricas extraídas de exames
-* Uma variável alvo indicando se o tumor é **benigno ou maligno**
+* Trata-se de um dataset amplamente utilizado na literatura e em estudos educacionais, o que facilita a comparação de resultados e a validação de abordagens
+* Possui um problema de classificação bem definido e de alta relevância prática: **distinguir tumores benignos de tumores malignos**
+* Apresenta dados já estruturados e numericamente representados, permitindo foco no estudo dos algoritmos de Machine Learning e em sua capacidade de generalização
+* É adequado para experimentos controlados de comparação entre modelos, uma vez que possui boa qualidade de dados e dimensionalidade compatível com diferentes técnicas de classificação
 
-O mesmo conjunto de dados e o mesmo pré-processamento são usados para **todos os modelos**, garantindo consistência nos experimentos.
+Além disso, o tema possui **alto impacto social**, o que torna o projeto não apenas tecnicamente interessante, mas também relevante do ponto de vista aplicado.
 
 ---
 
-## 🤖 Algoritmos Testados
+
+## 3. Considerações Éticas e Limitações
+
+É importante ressaltar que este dataset é utilizado **exclusivamente para fins educacionais e experimentais**. Os modelos desenvolvidos neste projeto:
+
+* Não substituem diagnóstico médico
+* Não devem ser utilizados em ambientes clínicos reais
+* Servem apenas como estudo de caso para avaliação de técnicas de Machine Learning
+
+O objetivo central é **compreender o comportamento dos algoritmos e o processo de modelagem**, e não propor uma solução clínica definitiva.
+
+---
+
+
+
+## Algoritmos Testados
 
 Neste projeto, são testados diferentes tipos de modelos, como por exemplo:
 
@@ -53,7 +80,7 @@ Cada algoritmo é:
 
 ---
 
-## 🔬 Metodologia
+## Metodologia
 
 O fluxo de trabalho do projeto segue as etapas:
 
@@ -66,32 +93,7 @@ O fluxo de trabalho do projeto segue as etapas:
 
 ---
 
-## 📊 Resultados
 
-Os resultados mostram claramente que:
-
-* Diferentes algoritmos respondem de formas diferentes ao mesmo problema
-* Alguns modelos têm melhor desempenho geral
-* Outros podem ser mais simples, mais rápidos ou mais interpretáveis
-
-A análise detalhada de cada modelo e suas métricas está documentada nas seções específicas deste projeto.
-
----
-
-## 🏗️ Organização do Projeto
-
-O projeto está estruturado de forma a separar:
-
-* Dados
-* Notebooks de análise
-* Código reutilizável
-* Modelos treinados
-* Relatórios e visualizações
-* Documentação (este site)
-
-Isso facilita a manutenção, a reprodução dos experimentos e o entendimento do projeto.
-
----
 
 ## 💼 Por que este projeto é relevante?
 
@@ -103,99 +105,6 @@ O valor está justamente em:
 
 Este projeto demonstra não apenas o uso de modelos, mas **método científico aplicado à ciência de dados**.
 
----
-??? info "Informações da Turma"
-    - Curso: Ciência de Dados
-    - Disciplina: Machine Learning
-    - Semestre: 4º Semestre — 2025.2
-    - Professor: Humberto Sandmann
-
----
-
-
-## Template Pessoal
-
-1. Maria Oliveira
 
 
 
-!!! tip "Instruções"
-
-    HUMBERRTOOO se você chegou a esse template a minha árvore de decisão está na aba de ATIVIDADESS.
-
-## Entregas
-
-- [x] Árvore de decisão - Data 29/08/2025
-- [X] KNN - Data 16/09/2025
-- [ ] Roteiro 3
-- [ ] Roteiro 4
-- [ ] Projeto
-
-## Diagramas
-
-Use o [Mermaid](https://mermaid.js.org/intro/){:target='_blank'} para criar os diagramas de documentação.
-
-[Mermaid Live Editor](https://mermaid.live/){:target='_blank'}
-
-
-``` mermaid
-flowchart TD
-    Deployment:::orange -->|defines| ReplicaSet
-    ReplicaSet -->|manages| pod((Pod))
-    pod:::red -->|runs| Container
-    Deployment -->|scales| pod
-    Deployment -->|updates| pod
-
-    Service:::orange -->|exposes| pod
-
-    subgraph  
-        ConfigMap:::orange
-        Secret:::orange
-    end
-
-    ConfigMap --> Deployment
-    Secret --> Deployment
-    classDef red fill:#f55
-    classDef orange fill:#ffa500
-```
-
-
-
-## Códigos
-
-=== "De um arquivo remoto"
-
-    ``` { .yaml .copy .select linenums='1' title="main.yaml" }
-    --8<-- "https://raw.githubusercontent.com/hsandmann/documentation.template/refs/heads/main/.github/workflows/main.yaml"
-    ```
-
-=== "Anotações no código"
-
-    ``` { .yaml title="compose.yaml" }
-    name: app
-
-        db:
-            image: postgres:17
-            environment:
-                POSTGRES_DB: ${POSTGRES_DB:-projeto} # (1)!
-                POSTGRES_USER: ${POSTGRES_USER:-projeto}
-                POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-projeto}
-            ports:
-                - 5432:5432 #(2)!
-    ```
-
-    1.  Caso a variável de ambiente `POSTGRES_DB` não exista ou seja nula - não seja definida no arquivo `.env` - o valor padrão será `projeto`. Vide [documentação](https://docs.docker.com/reference/compose-file/interpolation/){target='_blank'}.
-
-    2. Aqui é feito um túnel da porta 5432 do container do banco de dados para a porta 5432 do host (no caso localhost). Em um ambiente de produção, essa porta não deve ser exposta, pois ninguém de fora do compose deveria acessar o banco de dados diretamente.
-
-
-## Exemplo de vídeo
-
-Lorem ipsum dolor sit amet
-
-<iframe width="100%" height="470" src="https://www.youtube.com/embed/3574AYQml8w" allowfullscreen></iframe>
-
-
-## Referências
-
-[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/reference/){:target='_blank'}
