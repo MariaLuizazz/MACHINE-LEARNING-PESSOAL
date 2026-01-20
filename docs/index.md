@@ -95,7 +95,7 @@ O fluxo de trabalho do projeto segue as etapas:
 
 
 
-## 💼 Por que este projeto é relevante?
+## Por que este projeto é relevante?
 
 Este tipo de comparação é **extremamente comum no mercado**, pois raramente sabemos de antemão qual algoritmo será o melhor.
 
