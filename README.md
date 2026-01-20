@@ -1,35 +1,60 @@
-## Setup
+Perfeito. Aqui está uma **versão mais curta, direta e profissional** do README, ideal para GitHub e para quem está avaliando seu portfólio rapidamente.
 
-Para utilizar o código deste repositório, siga as instruções a seguir:
+É só **copiar e colar**:
 
-Crie um ambiente virtual do Python:
+---
 
-``` shell
-python3 -m venv env
-```
+# Comparação de Algoritmos de Machine Learning — Breast Cancer Dataset
 
-Ative o ambiente virtual (**você deve fazer isso sempre que for executar algum script deste repositório**):
+Este projeto realiza uma **análise comparativa de diferentes algoritmos de Machine Learning** aplicados a um problema de classificação supervisionada: a predição de câncer de mama a partir de dados clínicos.
 
-``` shell
-source env\Scripts\activate
-```
+Todos os modelos são treinados e avaliados utilizando **o mesmo dataset do Kaggle**, o mesmo pré-processamento e as mesmas métricas, garantindo uma comparação justa e metodologicamente correta.
 
-Instale as dependências com:
+---
 
-``` shell
-python -m pip install -r requirements.txt --upgrade
-```
+## Objetivo
 
-## Deployment
+* Comparar algoritmos de classificação supervisionada no mesmo problema
+* Avaliar o desempenho com métricas como *accuracy, precision, recall e F1-score*
+* Analisar vantagens e limitações de cada abordagem
+* Demonstrar um **processo completo de experimentação em Machine Learning**
 
-O material utiliza o [mkdocs](https://www.mkdocs.org/) para gerar a documentação. Para visualizar a documentação, execute o comando:
+---
 
-``` shell
-mkdocs serve -o
-```
+## Dataset
 
-Para subir ao GitHub Pages, execute o comando:
+O dataset utilizado é o **Breast Cancer Dataset (Kaggle)**, composto por variáveis numéricas extraídas de exames e uma variável alvo indicando se o tumor é **benigno** ou **maligno**.
 
-``` shell
-mkdocs gh-deploy
-```
+> Projeto com finalidade educacional. Os modelos não devem ser usados para diagnóstico real.
+
+---
+
+## Modelos Avaliados
+
+* Regressão Logística
+* KNN
+* Árvore de Decisão
+* Random Forest
+* SVM
+
+---
+
+## Metodologia
+
+1. Análise exploratória dos dados (EDA)
+2. Pré-processamento
+3. Treinamento dos modelos
+4. Avaliação e comparação dos resultados
+
+---
+
+
+## Sobre o Projeto
+
+Este projeto demonstra **organização, método científico e avaliação comparativa de modelos**, seguindo práticas próximas às utilizadas em ambientes profissionais de ciência de dados.
+
+---
+
+**Autora:** Maria Luiza
+
+---
