@@ -1,7 +1,3 @@
-Perfeito. Aqui está uma **versão mais curta, direta e profissional** do README, ideal para GitHub e para quem está avaliando seu portfólio rapidamente.
-
-É só **copiar e colar**:
-
 ---
 
 # Comparação de Algoritmos de Machine Learning — Breast Cancer Dataset
