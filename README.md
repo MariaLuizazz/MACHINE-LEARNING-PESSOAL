@@ -1,35 +1,55 @@
-## Setup
 
-Para utilizar o código deste repositório, siga as instruções a seguir:
+# Comparação de Algoritmos de Machine Learning — Breast Cancer Dataset
 
-Crie um ambiente virtual do Python:
+Este projeto realiza uma **análise comparativa de diferentes algoritmos de Machine Learning** aplicados a um problema de classificação supervisionada: a predição de câncer de mama a partir de dados clínicos.
 
-``` shell
-python3 -m venv env
-```
+Todos os modelos são treinados e avaliados utilizando **o mesmo dataset do Kaggle**, o mesmo pré-processamento e as mesmas métricas, garantindo uma comparação justa e metodologicamente correta.
 
-Ative o ambiente virtual (**você deve fazer isso sempre que for executar algum script deste repositório**):
+---
 
-``` shell
-source env\Scripts\activate
-```
+## Objetivo
 
-Instale as dependências com:
+* Comparar algoritmos de classificação supervisionada no mesmo problema
+* Avaliar o desempenho com métricas como *accuracy, precision, recall e F1-score*
+* Analisar vantagens e limitações de cada abordagem
+* Demonstrar um **processo completo de experimentação em Machine Learning**
 
-``` shell
-python -m pip install -r requirements.txt --upgrade
-```
+---
 
-## Deployment
+## Dataset
 
-O material utiliza o [mkdocs](https://www.mkdocs.org/) para gerar a documentação. Para visualizar a documentação, execute o comando:
+O dataset utilizado é o **Breast Cancer Dataset (Kaggle)**, composto por variáveis numéricas extraídas de exames e uma variável alvo indicando se o tumor é **benigno** ou **maligno**.
 
-``` shell
-mkdocs serve -o
-```
+> Projeto com finalidade educacional. Os modelos não devem ser usados para diagnóstico real.
 
-Para subir ao GitHub Pages, execute o comando:
+---
 
-``` shell
-mkdocs gh-deploy
-```
+## Modelos Avaliados
+
+* Regressão Logística
+* KNN
+* Árvore de Decisão
+* Random Forest
+* SVM
+
+---
+
+## Metodologia
+
+1. Análise exploratória dos dados (EDA)
+2. Pré-processamento
+3. Treinamento dos modelos
+4. Avaliação e comparação dos resultados
+
+---
+
+
+## Sobre o Projeto
+
+Este projeto demonstra **organização, método científico e avaliação comparativa de modelos**, seguindo práticas próximas às utilizadas em ambientes profissionais de ciência de dados.
+
+---
+
+**Autora:** Maria Luiza
+
+---
